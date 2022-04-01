@@ -47,8 +47,6 @@ router.post('/addStaff', async (req, res, next) => {
             facebook: req.body.facebook,
             instagram: req.body.instagram,
             others: req.body.others,
-            gender: req.body.gender,
-            blood_group: req.body.blood_group,
             status: req.body.status,
 
         }
@@ -95,8 +93,6 @@ router.post('/updateStaff', async (req, res, next) => {
             facebook: req.body.staff.facebook,
             instagram: req.body.staff.instagram,
             others: req.body.staff.others,
-            gender: req.body.staff.gender,
-            blood_group: req.body.staff.blood_group,
             status: req.body.staff.status,
 
         }

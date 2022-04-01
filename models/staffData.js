@@ -41,14 +41,6 @@ const StaffSchema = new Schema({
       type:String,
       required:true
   },
-  gender: {
-      type:String,
-      required:true
-  },
-  blood_group: {
-      type:String,
-      required:true
-  },
   status: {
       type:String,
       required:true
