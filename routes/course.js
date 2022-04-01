@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router()
 
 
-const COURSEDETAILS = require('../models/COURSEDATA');
+const COURSEDETAILS = require('../models/courseData');
 
 
 
