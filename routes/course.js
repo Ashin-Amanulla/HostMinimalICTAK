@@ -134,11 +134,12 @@ router.post('/updateCourse', async (req, res, next) => {
 
 
 //Delete Course
-router.delete('/deleteCourse', async (req, res, next) => {
+router.post('/deleteCourse', async (req, res, next) => {
 
     try {
         let id = req.body.id
-        const deleteCourse = await courseDetails.find()
+        
+        const deleteCourse = await courseDetails.findByIdAndDelete({ '_id': id })
         res.send(deleteCourse)
 
     } catch (error) {
