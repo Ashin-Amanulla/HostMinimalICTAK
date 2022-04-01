@@ -45,7 +45,7 @@ app.use(function (req, res, next) {
 
 //Use route
 
-app.use('/api/course', course);
+app.use('/course', course);
 
 
 
@@ -76,11 +76,9 @@ app.use((err, req, res, next) => {
     })
 })
 
-
-
-app.get('/*', function(req, res) {
+app.get('/*', function (req, res) {
     res.sendFile(path.join(__dirname + '/dist/minimal-ICTAK/index.html'));
-    });
+});
 //-------------PORT Listening -------//
 
 app.listen(PORT, () => {

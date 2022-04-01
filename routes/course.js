@@ -31,7 +31,7 @@ const cpUpload = upload.fields([
 /* multer end */
 
 
-//Id Details Insert
+//Course Details Insert
 router.post('/addCourse', async (req, res, next) => {
 
     try {
@@ -43,8 +43,8 @@ router.post('/addCourse', async (req, res, next) => {
             image: req.body.image,
             details: req.body.details,
             duration_months: req.body.duration_months,
-            duration_hours: req.body.duration_hours,
-            modules: req.body.modules,
+            duration_internship: req.body.duration_internship,
+            mode: req.body.mode,
             fees: req.body.fees,
             brochure: req.body.brochure,
             course_certificate: req.body.course_certificate,
@@ -73,8 +73,93 @@ router.post('/addCourse', async (req, res, next) => {
 
         console.log(error)
     }
-}
-)
+})
+
+//Course List Fetch
+router.get('/getCourses', async (req, res, next) => {
+
+    try {
+        const courseList = await courseDetails.find()
+        res.send(courseList)
+
+    } catch (error) {
+        console.log(error)
+    }
+})
+
+
+//Course Details Insert
+router.post('/updateCourse', async (req, res, next) => {
+
+    try {
+
+        var item = {
+            title: req.body.course.title,
+            code: req.body.course.code,
+            category: req.body.course.category,
+            image: req.body.course.image,
+            details: req.body.course.details,
+            duration_months: req.body.course.duration_months,
+            duration_internship: req.body.course.duration_internship,
+            mode: req.body.course.mode,
+            fees: req.body.course.fees,
+            brochure: req.body.course.brochure,
+            course_certificate: req.body.course.course_certificate,
+            internship_certificate: req.body.course.internship_certificate,
+            placement_list: req.body.course.placement_list,
+            objectives: req.body.course.objectives,
+            highlights: req.body.course.highlights,
+            test: req.body.course.test,
+            eligibility: req.body.course.eligibility,
+            agenda: req.body.course.agenda,
+            fee_detail: req.body.course.fee_detail,
+            start_date: req.body.course.start_date,
+            end_date: req.body.course.end_date,
+            status: req.body.course.status,
+            thumbnail: req.body.course.thumbnail
+        }
+        let id = req.body.id
+        let updateData = { $set: item };
+
+
+        // const courseData = new courseDetails(item)   //!Doesnt Work with update function 
+        const savedIdData = await courseDetails.findByIdAndUpdate({ "_id": id }, updateData)
+        res.send({ savedIdData })
+
+    } catch (error) {
+
+        console.log(error)
+    }
+})
+
+
+//Delete Course
+router.delete('/deleteCourse', async (req, res, next) => {
+
+    try {
+        let id = req.body.id
+        const deleteCourse = await courseDetails.find()
+        res.send(deleteCourse)
+
+    } catch (error) {
+        console.log(error)
+    }
+})
+
+//get Course by Id
+router.post('/getCoursebyId', async (req, res, next) => {
+
+    try {
+
+        console.log(req.body.id)
+        let _id = req.body.id
+        const singleCourse = await courseDetails.findById({ _id: _id })
+        res.send(singleCourse)
+
+    } catch (error) {
+        console.log(error)
+    }
+})
 
 
 

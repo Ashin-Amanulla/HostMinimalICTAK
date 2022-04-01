@@ -27,11 +27,11 @@ const CourseSchema = new Schema({
       type:String,
       required:true
   },
-  duration_hours: {
+  duration_internship: {
       type:String,
       required:true
   },
-  modules: {
+  mode: {
       type:String,
       required:true
   },
