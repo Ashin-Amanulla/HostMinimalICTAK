@@ -97,6 +97,6 @@ const CourseSchema = new Schema({
   }
 });
 
-var courseData = mongoose.model('CourseList', CourseSchema);
+var COURSEDATA = mongoose.model('CourseList', CourseSchema);
 
-module.exports = courseData;
+module.exports = COURSEDATA;

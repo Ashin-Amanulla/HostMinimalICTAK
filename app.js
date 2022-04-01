@@ -14,6 +14,8 @@ const app = express();
 
 // Routes 
 const course = require('./routes/course');
+const staff = require('./routes/staff');
+
 
 
 
@@ -46,6 +48,8 @@ app.use(function (req, res, next) {
 //Use route
 
 app.use('/api/course', course);
+app.use('/api/staff', staff);
+
 
 
 
@@ -79,7 +83,18 @@ app.use((err, req, res, next) => {
 app.get('/*', function (req, res) {
     res.sendFile(path.join(__dirname + '/dist/minimal-ICTAK/index.html'));
 });
+
+
+
+
+
+
+
 //-------------PORT Listening -------//
+
+
+
+
 
 app.listen(PORT, () => {
     console.log(`.....SERVER started at ${PORT}`)

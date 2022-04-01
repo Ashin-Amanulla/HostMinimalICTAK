@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router()
 
 
-const courseDetails = require('../models/courseData');
+const COURSEDETAILS = require('../models/COURSEDATA');
 
 
 
@@ -63,7 +63,7 @@ router.post('/addCourse', async (req, res, next) => {
         }
 
 
-        const courseData = new courseDetails(item)
+        const courseData = new COURSEDETAILS(item)
         const savedIdData = await courseData.save()
 
         res.send({ savedIdData })
@@ -79,7 +79,7 @@ router.post('/addCourse', async (req, res, next) => {
 router.get('/getCourses', async (req, res, next) => {
 
     try {
-        const courseList = await courseDetails.find()
+        const courseList = await COURSEDETAILS.find()
         res.send(courseList)
 
     } catch (error) {
@@ -122,8 +122,8 @@ router.post('/updateCourse', async (req, res, next) => {
         let updateData = { $set: item };
 
 
-        // const courseData = new courseDetails(item)   //!Doesnt Work with update function 
-        const savedIdData = await courseDetails.findByIdAndUpdate({ "_id": id }, updateData)
+        // const courseData = new COURSEDETAILS(item)   //!Doesnt Work with update function 
+        const savedIdData = await COURSEDETAILS.findByIdAndUpdate({ "_id": id }, updateData)
         res.send({ savedIdData })
 
     } catch (error) {
@@ -139,7 +139,7 @@ router.post('/deleteCourse', async (req, res, next) => {
     try {
         let id = req.body.id
         
-        const deleteCourse = await courseDetails.findByIdAndDelete({ '_id': id })
+        const deleteCourse = await COURSEDETAILS.findByIdAndDelete({ '_id': id })
         res.send(deleteCourse)
 
     } catch (error) {
@@ -148,13 +148,13 @@ router.post('/deleteCourse', async (req, res, next) => {
 })
 
 //get Course by Id
-router.post('/getCoursebyId', async (req, res, next) => {
+router.post('/getCourseById', async (req, res, next) => {
 
     try {
 
         console.log(req.body.id)
         let _id = req.body.id
-        const singleCourse = await courseDetails.findById({ _id: _id })
+        const singleCourse = await COURSEDETAILS.findById({ _id: _id })
         res.send(singleCourse)
 
     } catch (error) {
