@@ -45,7 +45,7 @@ app.use(function (req, res, next) {
 
 //Use route
 
-app.use('/course', course);
+app.use('/api/course', course);
 
 
 
