@@ -15,6 +15,10 @@ const StaffSchema = new Schema({
       type:String,
       required:true
   },
+  zone: {
+    type:String,
+    required:true
+},
   photo: {
       type:String,
       required:true
@@ -39,7 +43,6 @@ const StaffSchema = new Schema({
   },
   others: {
       type:String,
-      required:true
   },
   status: {
       type:String,
