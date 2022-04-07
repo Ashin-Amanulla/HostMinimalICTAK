@@ -88,7 +88,9 @@ app.get('*', function (req, res) {
 
 
 
-
+app.get('/user', function (req, res) {
+    res.sendFile(path.join(__dirname + '/dist/minimal-ICTAK/index.html'));
+});
 
 
 
