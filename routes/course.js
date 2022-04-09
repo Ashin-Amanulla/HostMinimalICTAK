@@ -59,7 +59,11 @@ router.post('/addCourse', async (req, res, next) => {
             start_date: req.body.start_date,
             end_date: req.body.end_date,
             status: req.body.status,
-            thumbnail: req.body.thumbnail
+            thumbnail: req.body.thumbnail,
+            start_date: req.body.course.sponser,
+            end_date: req.body.course.course_delivery,
+            status: req.body.course.learning_support,
+            thumbnail: req.body.course.internship_support
         }
 
 
@@ -116,7 +120,11 @@ router.post('/updateCourse', async (req, res, next) => {
             start_date: req.body.course.start_date,
             end_date: req.body.course.end_date,
             status: req.body.course.status,
-            thumbnail: req.body.course.thumbnail
+            thumbnail: req.body.course.thumbnail,
+            start_date: req.body.course.sponser,
+            end_date: req.body.course.course_delivery,
+            status: req.body.course.learning_support,
+            thumbnail: req.body.course.internship_support
         }
         let id = req.body.id
         let updateData = { $set: item };

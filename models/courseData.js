@@ -94,7 +94,23 @@ const CourseSchema = new Schema({
   thumbnail: {
       type:String,
       required:true
-  }
+  },
+  sponser: {
+    type:String,
+    required:true
+},
+course_delivery: {
+    type:String,
+    required:true
+},
+learning_support: {
+    type:String,
+    required:true
+},
+internship_support: {
+    type:String,
+    required:true
+}
 });
 
 var COURSEDATA = mongoose.model('CourseList', CourseSchema);
