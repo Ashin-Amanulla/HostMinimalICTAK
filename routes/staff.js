@@ -36,28 +36,38 @@ router.post('/addStaff', async (req, res, next) => {
 
     try {
 
-        var item = {
-            name: req.body.name,
-            designation: req.body.designation,
-            division: req.body.division,
-            zone:req.body.staff.zone,
-            photo: req.body.photo,
-            details: req.body.details,
-            mail: req.body.mail,
-            linkedIn: req.body.linkedIn,
-            facebook: req.body.facebook,
-            instagram: req.body.instagram,
-            others: req.body.others,
-            status: req.body.status,
 
-        }
+        var indx;
+
+        STAFFDETAILS.findOne().sort('-index').exec(async function (err, staff) {
+            indx = staff.index;
+            indx = indx + 1;
+
+            var item = {
+                name: req.body.name,
+                designation: req.body.designation,
+                employee_code: req.body.employee_code,
+                grade: req.body.grade,
+                division: req.body.division,
+                zone: req.body.staff.zone,
+                photo: req.body.photo,
+                details: req.body.details,
+                mail: req.body.mail,
+                linkedIn: req.body.linkedIn,
+                facebook: req.body.facebook,
+                instagram: req.body.instagram,
+                others: req.body.others,
+                status: req.body.status,
+                index: indx
+
+            }
 
 
-        const staffData = new STAFFDETAILS(item)
-        const savedIdData = await staffData.save()
+            const staffData = new STAFFDETAILS(item)
+            const savedIdData = await staffData.save()
 
-        res.send({ savedIdData })
-
+            res.send({ savedIdData })
+        })
 
     } catch (error) {
 
@@ -69,7 +79,7 @@ router.post('/addStaff', async (req, res, next) => {
 router.get('/getStaffs', async (req, res, next) => {
 
     try {
-        const staffList = await STAFFDETAILS.find()
+        const staffList = await STAFFDETAILS.find().sort({ index: 1 })
         res.send(staffList)
 
     } catch (error) {
@@ -86,8 +96,10 @@ router.post('/updateStaff', async (req, res, next) => {
         var item = {
             name: req.body.staff.name,
             designation: req.body.staff.designation,
+            employee_code: req.body.employee_code,
+            grade: req.body.grade,
             division: req.body.staff.division,
-            zone:req.body.staff.zone,
+            zone: req.body.staff.zone,
             photo: req.body.staff.photo,
             details: req.body.staff.details,
             mail: req.body.staff.mail,
@@ -141,6 +153,27 @@ router.post('/getStaffById', async (req, res, next) => {
         console.log(error)
     }
 })
+
+
+//update Index
+
+
+router.put('/updateIndex', async (req, res, next) => {
+
+    console.log('entered')
+
+    id = req.body._id;
+    title = req.body.name;
+    index = req.body.index;
+    console.log(`update of ${title} with value ${index}`);
+ 
+    const savedIdData = await STAFFDETAILS.findByIdAndUpdate({ "_id": id }, { $set: { "index": index } })
+    
+
+
+    res.send({ savedIdData })
+    
+});
 
 
 

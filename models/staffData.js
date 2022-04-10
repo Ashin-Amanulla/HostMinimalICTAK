@@ -11,6 +11,14 @@ const StaffSchema = new Schema({
       type:String,
       required:true
   },
+  employee_code:{
+      type:String,
+      required:true
+  },
+  grade:{
+      type:String,
+      required:true
+  },
   division: {
       type:String,
       required:true
@@ -47,7 +55,10 @@ const StaffSchema = new Schema({
   status: {
       type:String,
       required:true
-  }
+  },
+  index: {
+    type: Number
+}
  
 });
 

@@ -36,42 +36,51 @@ router.post('/addCourse', async (req, res, next) => {
 
     try {
 
-        var item = {
-            title: req.body.title,
-            code: req.body.code,
-            category: req.body.category,
-            image: req.body.image,
-            details: req.body.details,
-            duration_months: req.body.duration_months,
-            duration_internship: req.body.duration_internship,
-            mode: req.body.mode,
-            fees: req.body.fees,
-            brochure: req.body.brochure,
-            course_certificate: req.body.course_certificate,
-            internship_certificate: req.body.internship_certificate,
-            placement_list: req.body.placement_list,
-            objectives: req.body.objectives,
-            highlights: req.body.highlights,
-            test: req.body.test,
-            eligibility: req.body.eligibility,
-            agenda: req.body.agenda,
-            fee_detail: req.body.fee_detail,
-            start_date: req.body.start_date,
-            end_date: req.body.end_date,
-            status: req.body.status,
-            thumbnail: req.body.thumbnail,
-            start_date: req.body.course.sponser,
-            end_date: req.body.course.course_delivery,
-            status: req.body.course.learning_support,
-            thumbnail: req.body.course.internship_support
-        }
+        var indx;
+
+        COURSEDETAILS.findOne().sort('-index').exec( async function (err, course) {
+            indx = course.index;
+            indx = indx + 1;
+
+            var item = {
+                title: req.body.title,
+                code: req.body.code,
+                category: req.body.category,
+                image: req.body.image,
+                details: req.body.details,
+                duration_months: req.body.duration_months,
+                duration_internship: req.body.duration_internship,
+                mode: req.body.mode,
+                fees: req.body.fees,
+                brochure: req.body.brochure,
+                course_certificate: req.body.course_certificate,
+                internship_certificate: req.body.internship_certificate,
+                placement_list: req.body.placement_list,
+                objectives: req.body.objectives,
+                highlights: req.body.highlights,
+                test: req.body.test,
+                eligibility: req.body.eligibility,
+                agenda: req.body.agenda,
+                fee_detail: req.body.fee_detail,
+                start_date: req.body.start_date,
+                end_date: req.body.end_date,
+                status: req.body.status,
+                thumbnail: req.body.thumbnail,
+                start_date: req.body.course.sponser,
+                end_date: req.body.course.course_delivery,
+                status: req.body.course.learning_support,
+                thumbnail: req.body.course.internship_support,
+                index: indx
+            }
 
 
-        const courseData = new COURSEDETAILS(item)
-        const savedIdData = await courseData.save()
 
-        res.send({ savedIdData })
 
+            const courseData = new COURSEDETAILS(item)
+            const savedIdData = await courseData.save()
+
+            res.send({ savedIdData })
+        })
 
     } catch (error) {
 
@@ -83,7 +92,7 @@ router.post('/addCourse', async (req, res, next) => {
 router.get('/getCourses', async (req, res, next) => {
 
     try {
-        const courseList = await COURSEDETAILS.find()
+        const courseList = await COURSEDETAILS.find().sort({ index: 1 })
         res.send(courseList)
 
     } catch (error) {
@@ -146,7 +155,7 @@ router.post('/deleteCourse', async (req, res, next) => {
 
     try {
         let id = req.body.id
-        
+
         const deleteCourse = await COURSEDETAILS.findByIdAndDelete({ '_id': id })
         res.send(deleteCourse)
 
@@ -171,5 +180,20 @@ router.post('/getCourseById', async (req, res, next) => {
 })
 
 
+//update Index
+
+
+router.put('/updateIndex', async (req, res, next) => {
+
+    id = req.body._id;
+    title = req.body.title;
+    index = req.body.index;
+    console.log(`update of ${title} with value ${index}`);
+ 
+    const savedIdData = await COURSEDETAILS.findByIdAndUpdate({ "_id": id }, { $set: { "index": index } })
+
+    res.send({ savedIdData })
+
+});
 
 module.exports = router;
