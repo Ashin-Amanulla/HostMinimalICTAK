@@ -40,8 +40,12 @@ router.post('/addStaff', async (req, res, next) => {
         var indx;
 
         STAFFDETAILS.findOne().sort('-index').exec(async function (err, staff) {
-            indx = staff.index;
-            indx = indx + 1;
+            if (staff == null) {
+                indx = 1;
+            } else {
+                indx = staff.index;
+                indx = indx + 1;
+            }
 
             var item = {
                 name: req.body.name,
@@ -93,11 +97,13 @@ router.post('/updateStaff', async (req, res, next) => {
 
     try {
 
+        console.log(req.body.staff)
+
         var item = {
             name: req.body.staff.name,
             designation: req.body.staff.designation,
-            employee_code: req.body.employee_code,
-            grade: req.body.grade,
+            employee_code: req.body.staff.employee_code,
+            grade: req.body.staff.grade,
             division: req.body.staff.division,
             zone: req.body.staff.zone,
             photo: req.body.staff.photo,

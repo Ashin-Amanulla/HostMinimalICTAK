@@ -16,6 +16,9 @@ const app = express();
 const course = require('./routes/course');
 const staff = require('./routes/staff');
 const review = require('./routes/review')
+const blog = require('./routes/blog')
+const news = require('./routes/news')
+
 
 
 
@@ -50,7 +53,9 @@ app.use(function (req, res, next) {
 
 app.use('/api/course', course);
 app.use('/api/staff', staff);
-app.use('/api/review',review)
+app.use('/api/review', review)
+app.use('/api/blog',blog)
+app.use('/api/news',news)
 
 
 
@@ -88,6 +93,10 @@ app.get('*', function (req, res) {
 
 
 app.get('/user', function (req, res) {
+    res.sendFile(path.join(__dirname + '/dist/minimal-ICTAK/index.html'));
+});
+
+app.get('/admin', function (req, res) {
     res.sendFile(path.join(__dirname + '/dist/minimal-ICTAK/index.html'));
 });
 

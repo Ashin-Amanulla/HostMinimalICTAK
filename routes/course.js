@@ -38,9 +38,14 @@ router.post('/addCourse', async (req, res, next) => {
 
         var indx;
 
-        COURSEDETAILS.findOne().sort('-index').exec( async function (err, course) {
-            indx = course.index;
-            indx = indx + 1;
+        COURSEDETAILS.findOne().sort('-index').exec(async function (err, course) {
+            if (course == null) {
+                indx = 1;
+            } else {
+                indx = course.index;
+                indx = indx + 1;
+            }
+
 
             var item = {
                 title: req.body.title,
@@ -66,11 +71,12 @@ router.post('/addCourse', async (req, res, next) => {
                 end_date: req.body.end_date,
                 status: req.body.status,
                 thumbnail: req.body.thumbnail,
-                start_date: req.body.course.sponser,
-                end_date: req.body.course.course_delivery,
-                status: req.body.course.learning_support,
-                thumbnail: req.body.course.internship_support,
-                index: indx
+                sponser: req.body.course.sponser,
+                course_delivery: req.body.course.course_delivery,
+                learning_support: req.body.course.learning_support,
+                internship_support: req.body.course.internship_support,
+                index: indx,
+               
             }
 
 
@@ -130,10 +136,10 @@ router.post('/updateCourse', async (req, res, next) => {
             end_date: req.body.course.end_date,
             status: req.body.course.status,
             thumbnail: req.body.course.thumbnail,
-            start_date: req.body.course.sponser,
-            end_date: req.body.course.course_delivery,
-            status: req.body.course.learning_support,
-            thumbnail: req.body.course.internship_support
+            sponser: req.body.course.sponser,
+            course_delivery: req.body.course.course_delivery,
+            learning_support: req.body.course.learning_support,
+            internship_support: req.body.course.internship_support,
         }
         let id = req.body.id
         let updateData = { $set: item };
@@ -189,7 +195,7 @@ router.put('/updateIndex', async (req, res, next) => {
     title = req.body.title;
     index = req.body.index;
     console.log(`update of ${title} with value ${index}`);
- 
+
     const savedIdData = await COURSEDETAILS.findByIdAndUpdate({ "_id": id }, { $set: { "index": index } })
 
     res.send({ savedIdData })
