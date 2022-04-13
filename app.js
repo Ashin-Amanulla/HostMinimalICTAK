@@ -76,19 +76,19 @@ app.use('/api/am',am)
 
 //-------------HTTP Error Handling -------//
 
-app.use(async (req, res, next) => {
-    next(createError.NotFound('This route does not exist!!'));
-})
+// app.use(async (req, res, next) => {
+//     next(createError.NotFound('This route does not exist!!'));
+// })
 
-app.use((err, req, res, next) => {
-    res.status(err.status || 500)
-    res.send({
-        error: {
-            status: err.status || 500,
-            message: err.message
-        }
-    })
-})
+// app.use((err, req, res, next) => {
+//     res.status(err.status || 500)
+//     res.send({
+//         error: {
+//             status: err.status || 500,
+//             message: err.message
+//         }
+//     })
+// })
 
 
 
