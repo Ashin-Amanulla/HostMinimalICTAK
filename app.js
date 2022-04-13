@@ -89,9 +89,7 @@ app.use((err, req, res, next) => {
     })
 })
 
-app.get('/*', function (req, res) {
-    res.sendFile(path.join(__dirname + './dist/minimal-ICTAK/index.html'));
-});
+
 
 
 app.get('/user', function (req, res) {
@@ -102,7 +100,9 @@ app.get('/admin', function (req, res) {
     res.sendFile(path.join(__dirname + './dist/minimal-ICTAK/index.html'));
 });
 
-
+app.get('/*', function (req, res) {
+    res.sendFile(path.join(__dirname + './dist/minimal-ICTAK/index.html'));
+});
 
 
 
