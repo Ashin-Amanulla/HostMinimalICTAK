@@ -32,7 +32,6 @@ const am = require('./routes/academicMembership')
 
 
 
-
 //env variables
 const PORT = process.env.PORT || 8887;
 
@@ -90,17 +89,17 @@ app.use((err, req, res, next) => {
     })
 })
 
-app.get('*', function (req, res) {
-    res.sendFile(path.join(__dirname + '/dist/minimal-ICTAK/index.html'));
+app.get('/*', function (req, res) {
+    res.sendFile(path.join(__dirname + './dist/minimal-ICTAK/index.html'));
 });
 
 
 app.get('/user', function (req, res) {
-    res.sendFile(path.join(__dirname + '/dist/minimal-ICTAK/index.html'));
+    res.sendFile(path.join(__dirname + './dist/minimal-ICTAK/index.html'));
 });
 
 app.get('/admin', function (req, res) {
-    res.sendFile(path.join(__dirname + '/dist/minimal-ICTAK/index.html'));
+    res.sendFile(path.join(__dirname + './dist/minimal-ICTAK/index.html'));
 });
 
 
