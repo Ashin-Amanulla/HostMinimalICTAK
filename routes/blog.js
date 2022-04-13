@@ -1,7 +1,5 @@
 const express = require('express');
 const router = express.Router()
-
-
 const BLOGDETAILS = require('../models/BlogData');
 
 
@@ -28,7 +26,6 @@ router.post('/addBlog', async (req, res, next) => {
                 image: req.body.image,
                 content: req.body.content,
                 tags: req.body.tags,
-                comment: req.body.comment,
                 creation_date: new Date(),
                 index: indx
             }
@@ -71,7 +68,6 @@ router.post('/updateBlog', async (req, res, next) => {
             image: req.body.blog.image,
             content: req.body.blog.content,
             tags: req.body.blog.tags,
-            comment: req.body.blog.comment,
             creation_date: new Date()
         }
 
@@ -139,29 +135,29 @@ router.put('/updateIndex', async (req, res, next) => {
 
 
 //blogComment Insert
-router.post('/addComment', async (req, res, next) => {
-    console.log(req.body)
+// router.post('/addComment', async (req, res, next) => {
+//     console.log(req.body)
 
-    try {
+//     try {
 
-        var item = {
-            comment: req.body.comment,
-            creation_date: new Date()
+//         var item = {
+//             comment: req.body.comment,
+//             creation_date: new Date()
 
-        }
-
-
-        const blogComment = new BLOGDETAILS(item)
-        const savedIdData = await blogComment.save()
-
-        res.send({ savedIdData })
+//         }
 
 
-    } catch (error) {
+//         const blogComment = new BLOGDETAILS(item)
+//         const savedIdData = await blogComment.save()
 
-        console.log(error)
-    }
-})
+//         res.send({ savedIdData })
+
+
+//     } catch (error) {
+
+//         console.log(error)
+//     }
+// })
 
 
 module.exports = router;

@@ -18,6 +18,8 @@ const staff = require('./routes/staff');
 const review = require('./routes/review')
 const blog = require('./routes/blog')
 const news = require('./routes/news')
+const am = require('./routes/academicMembership')
+
 
 
 
@@ -56,6 +58,7 @@ app.use('/api/staff', staff);
 app.use('/api/review', review)
 app.use('/api/blog',blog)
 app.use('/api/news',news)
+app.use('/api/am',am)
 
 
 

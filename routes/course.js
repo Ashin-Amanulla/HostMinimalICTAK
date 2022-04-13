@@ -7,29 +7,6 @@ const COURSEDETAILS = require('../models/courseData');
 
 
 
-/* multer start */
-const multer = require('multer');
-
-const storage = multer.diskStorage({
-    destination: (req, file, cb) => {
-        cb(null, 'uploads/images');
-    },
-    filename: (req, file, cb) => {
-        cb(
-            null,
-            `${file.fieldname}-${+Date.now()}.${file.originalname.split('.')[1]}`
-        );
-    }
-});
-
-const upload = multer({ storage: storage });
-
-
-const cpUpload = upload.fields([
-    { name: 'image', maxCount: 1 }
-]);
-/* multer end */
-
 
 //Course Details Insert
 router.post('/addCourse', async (req, res, next) => {
@@ -178,6 +155,20 @@ router.post('/getCourseById', async (req, res, next) => {
         console.log(req.body.id)
         let _id = req.body.id
         const singleCourse = await COURSEDETAILS.findById({ _id: _id })
+        res.send(singleCourse)
+
+    } catch (error) {
+        console.log(error)
+    }
+})
+
+//get Course by Code
+router.post('/getCourseByCode', async (req, res, next) => {
+
+    try {
+
+        let code = req.body.code
+        const singleCourse = await COURSEDETAILS.find({ code:code})
         res.send(singleCourse)
 
     } catch (error) {

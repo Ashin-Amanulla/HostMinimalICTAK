@@ -7,29 +7,6 @@ const STAFFDETAILS = require('../models/staffData');
 
 
 
-/* multer start */
-const multer = require('multer');
-
-const storage = multer.diskStorage({
-    destination: (req, file, cb) => {
-        cb(null, 'uploads/images');
-    },
-    filename: (req, file, cb) => {
-        cb(
-            null,
-            `${file.fieldname}-${+Date.now()}.${file.originalname.split('.')[1]}`
-        );
-    }
-});
-
-const upload = multer({ storage: storage });
-
-
-const cpUpload = upload.fields([
-    { name: 'image', maxCount: 1 }
-]);
-/* multer end */
-
 
 //Staff Details Insert
 router.post('/addStaff', async (req, res, next) => {
@@ -83,7 +60,7 @@ router.post('/addStaff', async (req, res, next) => {
 router.get('/getStaffs', async (req, res, next) => {
 
     try {
-        const staffList = await STAFFDETAILS.find().sort({ index: 1 })
+        const staffList = await STAFFDETAILS.find().sort({ name: 1 })
         res.send(staffList)
 
     } catch (error) {

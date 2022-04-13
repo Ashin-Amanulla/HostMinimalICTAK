@@ -5,35 +5,31 @@ const BlogSchema = new Schema({
 
     title: {
         type: String,
-        // required: true
+        required: true
     },
     author: {
         type: String,
-        // required: true
+        required: true
     },
     date: {
         type: String,
-        // required: true
+        required: true
     },
     image: {
         type: String,
-        // required: true
+        required: true
     },
     content: {
         type: String,
-        // required: true
+        required: true
     },
     tags: {
         type: String,
-        // required: true
-    },
-    comment: {
-        type: String,
-        // required:true
+        required: true
     },
     index: {
         type: Number,
-        // required:true
+        required:true
     },
     creation_date:Date
 

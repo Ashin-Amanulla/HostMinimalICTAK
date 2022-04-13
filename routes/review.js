@@ -7,31 +7,10 @@ const REVIEWDETAILS = require('../models/reviewData');
 
 
 
-/* multer start */
-const multer = require('multer');
-
-const storage = multer.diskStorage({
-    destination: (req, file, cb) => {
-        cb(null, 'uploads/images');
-    },
-    filename: (req, file, cb) => {
-        cb(
-            null,
-            `${file.fieldname}-${+Date.now()}.${file.originalname.split('.')[1]}`
-        );
-    }
-});
-
-const upload = multer({ storage: storage });
 
 
-const cpUpload = upload.fields([
-    { name: 'image', maxCount: 1 }
-]);
-/* multer end */
 
-
-//Staff Details Insert
+//Review Details Insert
 router.post('/addReview', async (req, res, next) => {
 
     try {
@@ -43,6 +22,9 @@ router.post('/addReview', async (req, res, next) => {
             testimonial:req.body.testimonial,
             designation: req.body.designation,
             company: req.body.company,
+            reviewer_code:req.body.reviewer_code,
+            place:req.body.place,
+            rating:req.body.rating
          
         }
 
@@ -59,7 +41,7 @@ router.post('/addReview', async (req, res, next) => {
     }
 })
 
-//Staff List Fetch
+//Review List Fetch
 router.get('/getReviews', async (req, res, next) => {
 
     try {
@@ -72,7 +54,7 @@ router.get('/getReviews', async (req, res, next) => {
 })
 
 
-//Course Details Insert
+//Revie Details Insert
 router.post('/updateReview', async (req, res, next) => {
 
     try {
@@ -84,6 +66,9 @@ router.post('/updateReview', async (req, res, next) => {
             testimonial:req.body.review.testimonial,
             designation: req.body.review.designation,
             company: req.body.review.company,
+            reviewer_code:req.body.review.reviewer_code,
+            place:req.body.review.place,
+            rating:req.body.review.rating
          
         }
 
@@ -102,7 +87,7 @@ router.post('/updateReview', async (req, res, next) => {
 })
 
 
-//Delete Course
+//Delete Review
 router.post('/deleteReview', async (req, res, next) => {
 
     try {
@@ -116,7 +101,7 @@ router.post('/deleteReview', async (req, res, next) => {
     }
 })
 
-//get Course by Id
+//get Review by Id
 router.post('/getReviewById', async (req, res, next) => {
 
     try {
@@ -131,7 +116,20 @@ router.post('/getReviewById', async (req, res, next) => {
     }
 })
 
+//get Review by Title
+router.post('/getReviewByCourse', async (req, res, next) => {
 
+    try {
+
+        console.log(req.body.course,'back')
+        let course = req.body.course
+        const singleReview = await REVIEWDETAILS.find({ course: course })
+        res.send(singleReview)
+
+    } catch (error) {
+        console.log(error)
+    }
+})
 
 
 

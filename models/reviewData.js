@@ -7,6 +7,9 @@ const ReviewSchema = new Schema({
         type: String,
         required: true
     },
+    reviewer_code:{
+        type:String
+    },
     course: {
         type: String,
         required: true
@@ -19,6 +22,9 @@ const ReviewSchema = new Schema({
         type: String,
         required: true
     },
+    place:{
+        type:String
+    },
     designation: {
         type: String,
         required: true
@@ -27,6 +33,9 @@ const ReviewSchema = new Schema({
         type: String,
         required: true
     },
+    rating:{
+        type:Number
+    }
 
 
 });
