@@ -9,7 +9,7 @@ require('./helpers/init_mongodb')  //mongoDB connection handler
 // const { verifyAccessToken } = require('./helpers/jwt_helper')
 //initialize app
 const app = express();
-
+app.use(express.static('public'));
 
 
 // Routes 
@@ -19,6 +19,7 @@ const review = require('./routes/review')
 const blog = require('./routes/blog')
 const news = require('./routes/news')
 const am = require('./routes/academicMembership')
+
 
 
 
@@ -100,7 +101,7 @@ app.get('/admin', function (req, res) {
     res.sendFile(path.join(__dirname + './dist/minimal-ICTAK/index.html'));
 });
 
-app.get('/*', function (req, res) {
+app.get('*', function (req, res) {
     res.sendFile(path.join(__dirname + './dist/minimal-ICTAK/index.html'));
 });
 
