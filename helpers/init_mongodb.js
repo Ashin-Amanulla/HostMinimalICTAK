@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 mongoose
-  .connect(process.env.MONGO_URI, {
+  .connect('mongodb+srv://userone:userone@cluster0.vcc0q.mongodb.net/MinimalICTAK?retryWrites=true&w=majority', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
