@@ -8,7 +8,7 @@ const AMDETAILS = require('../models/academicData');
 router.get('/getAM', async (req, res, next) => {
 
     try {
-        const AMList = await AMDETAILS.find()
+        const AMList = await AMDETAILS.find().sort({ mem_id: 1 })
         res.send(AMList)
 
     } catch (error) {
