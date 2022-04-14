@@ -94,15 +94,15 @@ app.use('/api/am',am)
 
 
 app.get('/user', function (req, res) {
-    res.sendFile(path.join(__dirname + './dist/minimal-ICTAK/index.html'));
+    res.sendFile(path.join(__dirname + '/dist/minimal-ICTAK/index.html'));
 });
 
 app.get('/admin', function (req, res) {
-    res.sendFile(path.join(__dirname + './dist/minimal-ICTAK/index.html'));
+    res.sendFile(path.join(__dirname + '/dist/minimal-ICTAK/index.html'));
 });
 
 app.get('*', function (req, res) {
-    res.sendFile(path.join(__dirname + './dist/minimal-ICTAK/index.html'));
+    res.sendFile(path.join(__dirname + '/dist/minimal-ICTAK/index.html'));
 });
 
 
