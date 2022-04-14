@@ -38,7 +38,7 @@ const PORT = process.env.PORT || 8887;
 
 
 //Use in initialization
-app.use(express.static('./dist/minimal-ICTAK'));
+app.use(express.static('/dist/minimal-ICTAK'));
 app.use(logger('dev'));
 app.use(cors())
 app.use(express.json());
