@@ -3,6 +3,7 @@ const router = express.Router()
 
 
 const NEWSDETAILS = require('../models/newsData');
+const SUBSDETAILS = require('../models/subscriptionData')
 
 
 
@@ -22,7 +23,7 @@ router.post('/addNews', async (req, res, next) => {
                 indx = indx + 1;
             }
 
-          
+
 
             var item = {
                 title: req.body.title,
@@ -125,13 +126,54 @@ router.put('/updateIndex', async (req, res, next) => {
     index = req.body.index;
     console.log(`update of ${title} with value ${index}`);
 
-    const savedIdData = await NEWSDETAILS.findByIdAndUpdate({ "_id": id }, { $set: { "index": index } })
 
     res.send({ savedIdData })
 
 });
 
 
+//subscriptions
+
+router.post('/saveSubs', async (req, res, next) => {
+    
+
+
+    try {
+
+        console.log(req.body.subscription)
+        let item = {
+            email: req.body.subscription.email,
+            creation_date: Date.now()
+
+        }
+
+        const subsData = new SUBSDETAILS(item)
+        const savedIdData = await subsData.save()
+
+        res.send({ savedIdData })
+    } catch (error) {
+
+        console.log(error)
+
+    }
+
+
+
+
+});
+
+//get 
+router.get('/getSubscriptions', async (req, res, next) => {
+
+    try {
+
+        const subs = await SUBSDETAILS.find()
+        res.send(subs)
+
+    } catch (error) {
+        console.log(error)
+    }
+})
 
 
 
