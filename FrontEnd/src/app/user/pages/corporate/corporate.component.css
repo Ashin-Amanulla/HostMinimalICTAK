@@ -1,0 +1,25 @@
+.imgR > img {
+  border-radius: 50%;
+  width: 70%;
+  
+}
+
+.companyfont h3 {
+  font-family: "arvo", sans-serif;
+  font-size: 60px;
+}
+
+h4 {
+  font-family: "Asap", sans-serif;
+  font-size: 30px;
+}
+
+.bgClr {
+  background-color: rgb(206, 202, 202);
+}
+
+.buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}

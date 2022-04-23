@@ -1,0 +1,227 @@
+<!--Bootstrap modal -->
+<div class="vertiMain"></div>
+<!-- Left section  -->
+<div class="layout shadow" data-aos="fade-down" data-aos-duration="800">
+
+   <div class="left ">
+      <div class="content pt-16">
+         <input type="radio" name="slider" checked id="PostgraduatePrograms">
+         <input type="radio" name="slider" id="Long-termTraining">
+         <input type="radio" name="slider" id="MicroskillsPrograms">
+         <input type="radio" name="slider" id="Short-termPrograms">
+         <input type="radio" name="slider" id="AddonPrograms">
+         <input type="radio" name="slider" id="Internships">
+         <input type="radio" name="slider" id="WorkforceEnablementPrograms">
+
+         <div class="list  ">
+
+            <label for="PostgraduatePrograms" class="home">
+               <span class="icon"><i class="fas fa-code"></i></span>
+               <span class="title">Postgraduate Programs <i class="fas fa-angle-right"></i></span>
+            </label>
+            <label for="Long-termTraining" class="blog">
+               <span class="icon"><i class="fas fa-cogs"></i></span>
+               <span class="title">Long-term Training <i class="fas fa-angle-right"></i></span>
+
+            </label>
+            <label for="MicroskillsPrograms" class="help">
+               <span class="icon"><i class="fas fa-money-bill"></i></span>
+               <span class="title">Microskills Programs<i class="fas fa-angle-right"></i></span>
+
+            </label>
+            <label for="Short-termPrograms" class="code">
+               <span class="icon"><i class="fas fa-chart-bar"></i></span>
+               <span class="title">Short-term Programs<i class="fas fa-angle-right"></i></span>
+
+            </label>
+            <label for="AddonPrograms" class="about">
+               <span class="icon"><i class="fas fa-globe"></i></span>
+               <span class="title">Addon Programs<i class="fas fa-angle-right"></i></span>
+            </label>
+            <label for="Internships" class="intern">
+               <span class="icon"><i class="fas fa-globe"></i></span>
+               <span class="title">Internships<i class="fas fa-angle-right"></i></span>
+            </label>
+            <label for="WorkforceEnablementPrograms" class="work">
+               <span class="icon"><i class="fas fa-globe"></i></span>
+               <span class="title">Workforce Enablement Programs<i class="fas fa-angle-right"></i></span>
+            </label>
+
+            <div class="slider"></div>
+
+            <div class="vertical "></div>
+
+         </div>
+
+
+         <div class="text-content ">
+            <!-- first  -->
+
+            <div class="home text">
+
+               <div class="row ">
+                  <ng-container *ngFor="let course of courses">
+                     <div class="col-lg-4 col-md-6 col-sm-12" *ngIf="course.category=='Programming'">
+                        <div class="card">
+                           <div class="content2 ">
+                              <a (click)="singlePage(course.code)">
+                                 <h4>{{course.title}}</h4>
+                                 <i class="fas fa-arrow-right " aria-hidden="true"></i>
+                              </a>
+                           </div>
+
+                        </div>
+                     </div>
+                  </ng-container>
+               </div>
+
+            </div>
+
+            <!-- second  -->
+
+
+            <div class="blog text">
+               <div class="row ">
+                  <ng-container *ngFor="let course of courses">
+                     <div class="col-lg-4 col-md-6 col-sm-12" *ngIf="course.category=='Life Skills'">
+                        <div class="card">
+                           <div class="content2 ">
+                              <a (click)="singlePage(course.code)">
+                                 <h4>{{course.title}}</h4>
+                                 <i class="fas fa-arrow-right " aria-hidden="true"></i>
+                              </a>
+                           </div>
+
+                        </div>
+                     </div>
+                  </ng-container>
+               </div>
+            </div>
+
+            <!-- Third  -->
+
+            <div class="help text">
+               <div class="row ">
+                  <ng-container *ngFor="let course of courses">
+                     <div class="col-lg-4 col-md-6 col-sm-12" *ngIf="course.category=='Sales and Marketing'">
+                        <div class="card">
+                           <div class="content2 ">
+                              <a (click)="singlePage(course.code)">
+                                 <h4>{{course.title}}</h4>
+                                 <i class="fas fa-arrow-right " aria-hidden="true"></i>
+                              </a>
+                           </div>
+
+                        </div>
+                     </div>
+                  </ng-container>
+               </div>
+            </div>
+
+            <!-- Fourth  -->
+
+            <div class="code text">
+
+               <div class="row ">
+                  <ng-container *ngFor="let course of courses">
+                     <div class="col-lg-4 col-md-6 col-sm-12" *ngIf="course.category=='Buisness and Analytical'">
+                        <div class="card">
+                           <div class="content2 ">
+                              <a (click)="singlePage(course.code)">
+                                 <h4>{{course.title}}</h4>
+                                 <i class="fas fa-arrow-right " aria-hidden="true"></i>
+                              </a>
+                           </div>
+
+                        </div>
+                     </div>
+                  </ng-container>
+               </div>
+
+
+            </div>
+
+            <!-- Fifth  -->
+
+            <div class="about text">
+
+               <div class="row ">
+                  <ng-container *ngFor="let course of courses">
+                     <div class="col-lg-4 col-md-6 col-sm-12" *ngIf="course.category=='Web Development'">
+                        <div class="card">
+                           <div class="content2 ">
+                              <a (click)="singlePage(course.code)">
+                                 <h4>{{course.title}}</h4>
+                                 <i class="fas fa-arrow-right " aria-hidden="true"></i>
+                              </a>
+                           </div>
+
+                        </div>
+                     </div>
+                  </ng-container>
+               </div>
+
+
+            </div>
+
+
+            <!-- Sixth  -->
+
+            <div class="intern text">
+
+               <div class="row ">
+                  <ng-container *ngFor="let course of courses">
+                     <div class="col-lg-4 col-md-6 col-sm-12" *ngIf="course.category=='Web Development'">
+                        <div class="card">
+                           <div class="content2 ">
+                              <a (click)="singlePage(course.code)">
+                                 <h4>{{course.title}}</h4>
+                                 <i class="fas fa-arrow-right " aria-hidden="true"></i>
+                              </a>
+                           </div>
+
+                        </div>
+                     </div>
+                  </ng-container>
+               </div>
+
+
+            </div>
+
+
+            <!-- Seventh  -->
+
+            <div class="work text">
+
+               <div class="row ">
+                  <ng-container *ngFor="let course of courses">
+                     <div class="col-lg-4 col-md-6 col-sm-12" *ngIf="course.category=='Web Development'">
+                        <div class="card">
+                           <div class="content2 ">
+                              <a (click)="singlePage(course.code)">
+                                 <h4>{{course.title}}</h4>
+                                 <i class="fas fa-arrow-right " aria-hidden="true"></i>
+                              </a>
+                           </div>
+
+                        </div>
+                     </div>
+                  </ng-container>
+               </div>
+
+
+            </div>
+
+         </div>
+
+         <div class="view_all">
+            <a routerLink="courses" class="flex items-center justify-center"
+               (click)=" this.emitData.emit('hide Modal!');">
+               <span class="flex items-center justify-center "> View all Courses&nbsp;
+                  <i class="fas fa-arrow-right  " aria-hidden="true"></i>
+               </span>
+            </a>
+         </div>
+      </div>
+   </div>
+</div>

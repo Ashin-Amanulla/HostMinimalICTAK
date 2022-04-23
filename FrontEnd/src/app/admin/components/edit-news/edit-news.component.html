@@ -1,0 +1,64 @@
+<div class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-blueGray-100 border-0">
+
+    <div class="flex-auto px-4 lg:px-10 py-10 pt-0">
+        <form [formGroup]="News" (ngSubmit)="onSave()">
+
+
+            <div class="flex justify-content-between">
+                <h6 class="text-blueGray-400 text-sm mt-3 mb-6 font-bold uppercase">
+                    News Info
+                </h6>
+                <button style="cursor: pointer;" class="pt-1 " (click)="deleteNews()"> <i
+                        class="fa fa-trash"></i></button>
+
+            </div>
+            <!-- Primary Info  -->
+            <hr class="mt-6 border-b-1 border-blueGray-300" />
+
+            <h6 class="text-blueGray-400 text-sm mt-3 mb-6 font-bold uppercase">
+                Primary Details
+            </h6>
+            <div class="flex flex-wrap">
+                <div class="w-full lg:w-6/12 px-4">
+                    <div class="relative w-full mb-3">
+                        <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlFor="grid-password">
+                            News Title
+                        </label>
+                        <input  type="text"   formControlName="title"
+                            class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" />
+                    </div>
+                </div>
+                <div class="w-full lg:w-6/12 px-4">
+                    <div class="relative w-full mb-3">
+                        <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlFor="grid-password">
+                            News Date (in DD-MMM format eg: 24 Aug)
+                        </label>
+                        <input type="text" formControlName="date"
+                            class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" />
+                    </div>
+                </div>
+              
+            </div>
+
+            <div class="flex flex-wrap">
+                <div class="w-full lg:w-12/12 px-4">
+                    <div class="relative w-full mb-3">
+                        <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlFor="grid-password">
+                            Content
+                        </label>
+
+                        <ckeditor [editor]="Editor" formControlName="content"></ckeditor>
+
+                    </div>
+                </div>
+            </div>
+
+          
+
+            <!-- Sixth  -->
+            <div class="flex justify-center mt-6">
+                <input class="button-84" type="submit" value="Submit">
+            </div>
+        </form>
+    </div>
+</div>

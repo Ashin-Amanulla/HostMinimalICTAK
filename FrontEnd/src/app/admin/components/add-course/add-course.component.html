@@ -1,0 +1,404 @@
+<div class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-blueGray-100 border-0">
+
+    <div class="flex-auto px-4 lg:px-10 py-10 pt-0">
+        <form [formGroup]="course" (ngSubmit)="onSubmit()">
+
+
+            <h6 class="text-blueGray-400 text-sm mt-3 mb-6 font-bold uppercase">
+                Course Info
+            </h6>
+            <!-- Primary Info  -->
+            <hr class="mt-6 border-b-1 border-blueGray-300" />
+
+            <h6 class="text-blueGray-400 text-sm mt-3 mb-6 font-bold uppercase">
+                Primary Details
+            </h6>
+            <div class="flex flex-wrap">
+                <div class="w-full lg:w-6/12 px-4">
+                    <div class="relative w-full mb-3">
+                        <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlFor="grid-password">
+                            Course name
+                        </label>
+                        <input  type="text"   formControlName="title"
+                            class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" />
+                    </div>
+                </div>
+                <div class="w-full lg:w-6/12 px-4">
+                    <div class="relative w-full mb-3">
+                        <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlFor="grid-password">
+                            Course Code
+                        </label>
+                        <input type="email" formControlName="code"
+                            class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" />
+                    </div>
+                </div>
+                <div class="w-full lg:w-6/12 px-4">
+                    <div class="relative w-full mb-3">
+                        <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlFor="grid-password">
+                            Course Category
+                        </label>
+
+                        <select formControlName="category"
+                            class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150">
+                            <option value="Postgraduate Programs">Postgraduate Programs</option>
+                            <option value="Long-term Training">Long-term Training</option>
+                            <option value="Microskills Programs">Microskills Programs</option>
+                            <option value="Short-term Programs">Short-term Programs</option>
+                            <option value="Addon Programs">Addon Programs</option>
+                            <option value="Internships">Internships</option>
+                            <option value="Workforce Enablement Programs">Workforce Enablement Programs</option>
+
+
+                        </select>
+
+                    </div>
+                </div>
+                <div class="w-full lg:w-6/12 px-4">
+                    <div class="relative w-full mb-3">
+                        <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlFor="grid-password">
+                            Sub Category
+                        </label>
+                        <input type="text" formControlName="sub"
+                            class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" />
+                    </div>
+                </div>
+
+                <div class="w-full lg:w-6/12 px-4">
+                    <div class="relative w-full mb-3">
+                        <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlFor="grid-password">
+                            Course Image
+                        </label>
+                        <input type="text" formControlName="image"
+                            class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex flex-wrap">
+                <div class="w-full lg:w-12/12 px-4">
+                    <div class="relative w-full mb-3">
+                        <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlFor="grid-password">
+                            Course Details
+                        </label>
+
+                        <textarea class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                            rows="4"  formControlName="details"></textarea>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Secondary Info  -->
+            <hr class="mt-6 border-b-1 border-blueGray-300" />
+
+            <h6 class="text-blueGray-400 text-sm mt-3 mb-6 font-bold uppercase">
+                Info
+            </h6>
+
+
+            <div class="flex flex-wrap">
+
+                <div class="w-full lg:w-3/12 px-4">
+                    <div class="relative w-full mb-3">
+                        <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlFor="grid-password">
+                            Duration in Months
+                        </label>
+                        <input type="text" formControlName="duration_months"
+                            class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" />
+                    </div>
+                </div>
+                <div class="w-full lg:w-3/12 px-4">
+                    <div class="relative w-full mb-3">
+                        <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlFor="grid-password">
+                            Duration of Internship
+                        </label>
+                        <input type="text" formControlName="duration_internship"
+                            class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" />
+                    </div>
+                </div>
+                <div class="w-full lg:w-3/12 px-4">
+                    <div class="relative w-full mb-3">
+                        <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlFor="grid-password">
+                            Mode of Conduct
+                        </label>
+                        <select formControlName="mode"
+                            class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150">
+                            <option value="Offline">Offline</option>
+                            <option value="Online">Online</option>
+                            <option value="Hybrid">Hybrid</option>
+                        </select>
+
+                    </div>
+                </div>
+
+                <div class="w-full lg:w-3/12 px-4">
+                    <div class="relative w-full mb-3">
+                        <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlFor="grid-password">
+                            Fee
+                        </label>
+                        <input type="text" formControlName="fees"
+                            class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" />
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Third  -->
+            <hr class="mt-6 border-b-1 border-blueGray-300" />
+
+            <h6 class="text-blueGray-400 text-sm mt-3 mb-6 font-bold uppercase">
+                Downloads
+            </h6>
+
+            <div class="flex flex-wrap">
+
+                <div class="w-full lg:w-3/12 px-4">
+                    <div class="relative w-full mb-3">
+                        <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlFor="grid-password">
+                            Brochure
+                        </label>
+                        <input type="text" formControlName="brochure"
+                            class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" />
+                    </div>
+                </div>
+                <div class="w-full lg:w-3/12 px-4">
+                    <div class="relative w-full mb-3">
+                        <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlFor="grid-password">
+                            Sample Certificate
+                        </label>
+                        <input type="text" formControlName="course_certificate"
+                            class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" />
+                    </div>
+                </div>
+                <div class="w-full lg:w-3/12 px-4">
+                    <div class="relative w-full mb-3">
+                        <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlFor="grid-password">
+                            Sample Internship Certificate
+                        </label>
+                        <input type="text" formControlName="internship_certificate"
+                            class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" />
+                    </div>
+                </div>
+
+                <div class="w-full lg:w-3/12 px-4">
+                    <div class="relative w-full mb-3">
+                        <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlFor="grid-password">
+                            Placememnt Companies List
+                        </label>
+                        <input type="text" formControlName="placement_list"
+                            class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" />
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fourth  -->
+            <hr class="mt-6 border-b-1 border-blueGray-300" />
+
+            <h6 class="text-blueGray-400 text-sm mt-3 mb-6 font-bold uppercase">
+                Highlights
+            </h6>
+
+            <div class="flex flex-wrap">
+                <div class="w-full lg:w-12/12 px-4">
+                    <div class="relative w-full mb-3">
+                        <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlFor="grid-password">
+                            Objectives
+                        </label>
+
+                        <textarea class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                            rows="4"  formControlName="objectives"></textarea>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex flex-wrap">
+                <div class="w-full lg:w-12/12 px-4">
+                    <div class="relative w-full mb-3">
+                        <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlFor="grid-password">
+                            Highlights
+                        </label>
+                        <textarea class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                            rows="4"  formControlName="highlights"></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex flex-wrap">
+                <div class="w-full lg:w-12/12 px-4">
+                    <div class="relative w-full mb-3">
+                        <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlFor="grid-password">
+                            General Aptitude test
+                        </label>
+                        <textarea class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                            rows="4"  formControlName="test"></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex flex-wrap">
+                <div class="w-full lg:w-12/12 px-4">
+                    <div class="relative w-full mb-3">
+                        <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlFor="grid-password">
+                            Eligibility
+                        </label>
+                        <textarea class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                            rows="4"  formControlName="eligibility"></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex flex-wrap">
+                <div class="w-full lg:w-12/12 px-4">
+                    <div class="relative w-full mb-3">
+                        <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlFor="grid-password">
+                            Course Agenda
+                        </label>
+                        <textarea class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                            rows="4" formControlName="agenda"></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex flex-wrap">
+                <div class="w-full lg:w-12/12 px-4">
+                    <div class="relative w-full mb-3">
+                        <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlFor="grid-password">
+                            Course Fee
+                        </label>
+
+
+                        <textarea class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                            rows="4"  formControlName="fee_detail">
+                        </textarea>
+
+
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Fifth  -->
+            <hr class="mt-6 border-b-1 border-blueGray-300" />
+
+            <h6 class="text-blueGray-400 text-sm mt-3 mb-6 font-bold uppercase">
+                Dates
+            </h6>
+
+            <div class="flex flex-wrap">
+                <div class="w-full lg:w-6/12 px-4">
+                    <div class="relative w-full mb-3">
+                        <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlFor="grid-password">
+                            Start Date
+                        </label>
+                        <input type="text" formControlName="start_date"
+                            class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" />
+                    </div>
+                </div>
+                <div class="w-full lg:w-6/12 px-4">
+                    <div class="relative w-full mb-3">
+                        <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlFor="grid-password">
+                            End Date
+                        </label>
+                        <input type="text" formControlName="end_date"
+                            class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" />
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sixth  -->
+            <hr class="mt-6 border-b-1 border-blueGray-300" />
+
+            <h6 class="text-blueGray-400 text-sm mt-3 mb-6 font-bold uppercase">
+                Status
+            </h6>
+
+            <div class="flex flex-wrap">
+
+                <div class="w-full lg:w-4/12 px-4">
+                    <div class="relative w-full mb-3">
+                        <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlFor="grid-password">
+                            Current Status
+                        </label>
+
+                        <select formControlName="status"
+                            class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150">
+                            <option value="Open">Open</option>
+                            <option value="Coming Soon">Coming Soon</option>
+                            <option value="Closed">Closed</option>
+                        </select>
+
+                    </div>
+                </div>
+
+                <div class="w-full lg:w-4/12 px-4">
+                    <div class="relative w-full mb-3">
+                        <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlFor="grid-password">
+                            Thumbnail
+                        </label>
+                        <input type="text" formControlName="thumbnail"
+                            class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" />
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- uploads  -->
+            <hr class="mt-6 border-b-1 border-blueGray-300" />
+
+            <h6 class="text-blueGray-400 text-sm mt-3 mb-6 font-bold uppercase">
+                Images
+            </h6>
+
+
+            <div class="flex flex-wrap">
+
+                <div class="w-full lg:w-3/12 px-4">
+                    <div class="relative w-full mb-3">
+                        <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlFor="grid-password">
+                            Powered by
+                        </label>
+                        <input type="text" formControlName="sponser"
+                            class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" />
+                    </div>
+                </div>
+                <div class="w-full lg:w-3/12 px-4">
+                    <div class="relative w-full mb-3">
+                        <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlFor="grid-password">
+                            Course Delivery
+                        </label>
+                        <input type="text" formControlName="course_delivery"
+                            class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" />
+                    </div>
+                </div>
+                <div class="w-full lg:w-3/12 px-4">
+                    <div class="relative w-full mb-3">
+                        <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlFor="grid-password">
+                            Learning Support
+                        </label>
+                        <input type="text" formControlName="learning_support"
+                            class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" />
+
+                    </div>
+                </div>
+
+                <div class="w-full lg:w-3/12 px-4">
+                    <div class="relative w-full mb-3">
+                        <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlFor="grid-password">
+                            Internship Support
+                        </label>
+                        <input type="text" formControlName="internship_support"
+                            class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" />
+                    </div>
+                </div>
+            </div>
+
+
+
+            <!-- Sixth  -->
+            <div class="flex justify-center mt-6">
+                <input class="button-84" type="submit" value="Submit">
+            </div>
+        </form>
+    </div>
+</div>

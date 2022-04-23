@@ -15,6 +15,9 @@ const CourseSchema = new Schema({
         type: String,
         required: true
     },
+    sub: {
+        type: String,
+    },
     image: {
         type: String,
         required: true

@@ -1,0 +1,35 @@
+<nav class=" nav-bar z-50 w-full flex flex-wrap items-center justify-between px-2 py-3 navbar-expand-lg bg-white shadow sticky-top sm:hidden"
+    [ngClass]='{"sticky":isSticky}'>
+
+    <div class="container px-4 mx-auto flex flex-wrap items-center justify-between">
+        <div
+            class="logo relative flex justify-content-lg-start lg:w-auto lg:static sm:block lg:block lg:justify-start logo">
+            <a [routerLink]="['/']" routerLink="" class="">
+                <img src="../../../assets/images/Logo-Name_ICTAK.png" alt="logo">
+            </a>
+        </div>
+
+        <div class="lg:flex flex-grow items-center "  id="example-navbar-warning">
+            <ul class="flex flex-col lg:flex-row list-none lg:ml-auto">
+                <li class="flex items-center">
+                    <app-hamburger (emitData)="modalOpen=false"></app-hamburger>
+                </li>
+                <li class="flex items-center ">
+                    <app-course-button [label]='courses' (click)="setModalOpen()">
+                    </app-course-button>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+</nav>
+
+<div *ngIf="modalOpen">
+    <app-course-modal (emitData)="modalOpen=false"></app-course-modal>
+</div>
+
+
+<div class="side-nav">
+    <app-side-navbar></app-side-navbar>
+</div>

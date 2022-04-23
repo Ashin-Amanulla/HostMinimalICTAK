@@ -1,0 +1,80 @@
+<!-- Blog Header -->
+<header class="header pb-5">
+    <div class="text-box">
+        <h1 class="heading-primary">
+            <span class="heading-primary-main">Archives</span>
+            <!-- <span class="heading-primary-sub">The secondary heading</span> -->
+        </h1>
+        <div (click)="scroll(target)">
+            <a class="btn btn-white btn-animated "></a>
+            <div class="mouse_scroll">
+                <div class="mouse">
+                    <div class="wheel"></div>
+                </div>
+                <div>
+                    <span class="m_scroll_arrows unu"></span>
+                    <span class="m_scroll_arrows doi"></span>
+                    <span class="m_scroll_arrows trei"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="container3 pt-32 pb-32" #target>
+
+
+    <div class="tabset">
+
+
+
+
+        <div class="flex flex-wrap items-center ">
+
+            <div class="w-full  px-4 mr-auto ml-auto mt-20 ">
+                <div class="justify-center flex flex-wrap relative ">
+
+                    <ul class="l-news ">
+
+                        <li class="l-news__content p-news__content" *ngFor="let new1 of new1s" data-toggle="modal"
+                            data-target="#News1" (click)="SelectedItem=new1">
+                            <div class="l-news__content__day p-news__content__day">{{new1.date}}</div>
+                            <div class="l-news__content__label p-news__content__label">NEWS </div>
+                            <div class="l-news__content__text p-news__content__text">{{new1.title}}</div>
+                        </li>
+
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+</div>
+
+<!-- ?News  -->
+
+<div class="modal fade" id="News1" tabindex="-1" role="dialog" aria-labelledby="News1Label" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+
+            <!-- Modal body with image -->
+            <div class="modal-body">
+
+
+
+
+                <div class="blog-item-content news-content ">
+                    <span class="blog-item-date-day" style="color: brown;">{{SelectedItem.date}}</span><br>
+                    <h3 style="font-weight: 700;font-size: x-large;">{{SelectedItem.title}}</h3>
+                    <p [innerHTML]="SelectedItem.content"></p>
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+</div>

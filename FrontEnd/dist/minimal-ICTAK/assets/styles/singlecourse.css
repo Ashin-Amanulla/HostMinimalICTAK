@@ -1,0 +1,148 @@
+
+.product_single_content .mbp_pagination_comments .mbp_first.media h4.sub_title ul li a{
+  font-size: 13px;
+  font-family: "FontAwesome";
+  color: rgb(208, 210, 60);
+  line-height: 1.2;
+}
+.product_single_content .mbp_pagination_comments .mbp_first.media h4.sub_title .sspd_review ul li{
+  margin-right: 2px;
+}
+.product_single_content .mbp_pagination_comments .mbp_first.media .sspd_review_liked,
+.product_single_content .mbp_pagination_comments .mbp_second.media .sspd_review_liked{
+  background-color: rgb(237, 239, 247);
+  border-radius: 20px;
+  color: rgb(126, 126, 126);
+  font-size: 14px;
+  font-family: "Open Sans";
+  height: 40px;
+  line-height: 2.714;
+  text-align: center;
+  width: 200px;
+}
+.more-review-btn{
+  border-style: solid;
+  border-width: 2px;
+  border-color: rgb(36, 65, 231);
+  border-radius: 25px;
+  font-size: 15px;
+  font-family: "Open Sans";
+  color: rgb(36, 65, 231);
+  line-height: 1.2;
+  height: 50px;
+  width: 234px;
+}
+.more-review-btn:hover{
+  background-color: rgba(36, 65, 231);
+  color: #ffffff;
+}
+.shop-single-content{
+  overflow: hidden;
+}
+.shop_single_tab_content .nav-tabs,
+.cs_rwo_tabs.csv2 .nav-tabs{
+  border-bottom: none;
+}
+.cs_rwo_tabs.csv2 .nav-tabs .nav-link{
+  border: 1px solid transparent;
+  font-size: 18px;
+  font-family: "Nunito";
+  color: #0a0a0a;
+  height: 64px;
+  line-height: 2.5;
+  text-align: center;
+  width: 165px;
+}
+.cs_rwo_tabs{
+  width: 700px;
+}
+
+
+
+.cs_rwo_tabs.csv2 .nav-tabs .nav-link:hover{
+  border: 1px solid transparent;
+}
+.cs_rwo_tabs.csv2 .nav-tabs .nav-link.active{
+  background-color: orangered;
+  color: white;
+  border-radius: 5px;
+  position: relative;
+  -webkit-box-shadow: 0 1px 4px 0 rgba(0,0,0,.12);
+  -moz-box-shadow: 0 1px 4px 0 rgba(0,0,0,.12);
+  box-shadow: 0 1px 4px 0 rgba(0,0,0,.12);
+}
+.cs_rwo_tabs.csv2 .nav-tabs .nav-link.active:before{
+  background-color: orangered;
+  content:"";
+  height: 18px;
+  left: 0;
+  margin-left: 75px;
+  margin-top: 46px;
+  position: absolute;
+  right: 0;
+  width: 18px;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.cs_rwo_tabs.csv2 .nav-tabs .nav-link.style2{
+  border: 1px solid transparent;
+  color: #0a0a0a;
+  font-size: 18px;
+  font-family: "Nunito";
+  color: #0a0a0a;
+  height: 40px;
+  line-height: 1.2;
+  text-align: center;
+  width: 165px;
+}
+.cs_rwo_tabs.csv2 .nav-tabs .nav-link.style2.active{
+  background-color: rgb(10, 10, 10);
+  border-radius: 5px;
+  font-size: 18px;
+  font-family: "Nunito";
+  color: rgb(255, 255, 255);
+  height: 40px;
+  line-height: 1.2;
+}
+.cs_rwo_tabs.csv2 .nav-tabs .nav-link.style2.active:before,
+.cs_rwo_tabs.csv2 .nav-tabs .nav-link.style3.active:before,
+.cs_rwo_tabs.csv2 .nav-tabs .nav-link.style4.active:before{
+  display: none;
+}
+ul.nav.nav-tabs.style3{
+  border-radius: 4px;
+  background-color: #f9fafc;
+  height: auto;
+}
+ul.nav.nav-tabs.style4{
+  background-color: transparent;
+  border-bottom: 2px solid #eeeeee;
+}
+.cs_rwo_tabs.csv2 .nav-tabs .nav-link.style3,
+.cs_rwo_tabs.csv2 .nav-tabs .nav-link.style4{
+  border: 2px solid transparent;
+  color: #0a0a0a;
+  font-size: 18px;
+  font-family: "Nunito";
+  line-height: 40px;
+  text-align: center;
+  width: 165px;
+}
+.cs_rwo_tabs.csv2 .nav-tabs .nav-link.style3.active,
+.cs_rwo_tabs.csv2 .nav-tabs .nav-link.style4.active{
+  border-bottom: 2px solid #0a0a0a;
+  background-color: transparent !important;
+  box-shadow: none;
+}
+.cs_rwo_tabs.csv2 .nav-tabs .nav-link.style3{
+  border: 2px solid transparent;
+  color: #0a0a0a;
+  font-size: 18px;
+  font-family: "Nunito";
+  line-height: 40px;
+  text-align: center;
+  width: 165px;
+}
+

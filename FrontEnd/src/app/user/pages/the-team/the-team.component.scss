@@ -1,0 +1,65 @@
+
+
+/* Defaults */
+:root {
+  --black: hsl(1, 1%, 3%);
+  --white: hsl(1, 1%, 97%);
+  --font: 'PT Sans', sans-serif;
+  --font-alt: 'Lato', sans-serif;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  height: 100%;
+}
+
+body {
+  background: var(--white);
+  color: var(--black);
+  font-family: var(--font);
+}
+
+
+//CEO
+.companyfont h3 {
+  font-family: "arvo", sans-serif;
+  font-size: 60px;
+}
+
+.companyfont h1 {
+  font-family: "arvo", sans-serif;
+  font-size: 40px;
+}
+
+
+
+
+
+
+.chairmanName{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  h4{
+    font-weight: 700;
+    font-size: larger;
+  }
+}
+
+.imgR > img {
+  // width: 60%;
+  height: 50vh;
+  object-fit: cover;
+  position: relative;
+  
+  z-index: 1;
+   border-radius: 3px; 
+  box-shadow:
+  -50px -50px 0 -40px rgb(77, 76, 76),
+  50px 50px 0 -40px rgb(77, 76, 76);
+}

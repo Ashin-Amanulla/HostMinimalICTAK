@@ -1,0 +1,33 @@
+<nav role="navigation" class="primary-navigation">
+  <ul>
+    <li><a>About</a>
+      <ul class="dropdown">
+        <li><a (click)=" this.emitData.emit('hide Modal!');" routerLink="company" >The Company</a></li>
+        <li><a (click)=" this.emitData.emit('hide Modal!');" routerLink="team">The Team</a></li>
+        <li><a (click)=" this.emitData.emit('hide Modal!');" routerLink="shareholders">The Shareholders</a></li>
+        <li><a (click)=" this.emitData.emit('hide Modal!');" routerLink="OU">The Operating Units</a></li>
+
+
+      </ul>
+    </li>
+    <li><a>Initiatives</a>
+      <ul class="dropdown">
+        <li><a  (click)=" this.emitData.emit('hide Modal!');"  routerLink="memberships">Memberships</a></li>
+        <li><a  (click)=" this.emitData.emit('hide Modal!');"  routerLink="partnerships">Partnerships</a></li>
+        <li><a  (click)=" this.emitData.emit('hide Modal!');"  routerLink="projects">Projects</a></li>
+        <li><a  (click)=" this.emitData.emit('hide Modal!');"  routerLink="services">Services</a></li>
+      </ul>
+    </li>
+  
+
+    <li><a>Events</a>
+      <ul class="dropdown">
+        <li><a  (click)=" this.emitData.emit('hide Modal!');" routerLink="site">ICSET</a></li>
+        <li><a  (click)=" this.emitData.emit('hide Modal!');" routerLink="site">Techathlon</a></li>
+        <li><a  (click)=" this.emitData.emit('hide Modal!');" routerLink="site">Others</a></li>
+      </ul>
+    </li>
+
+
+  </ul>
+</nav>

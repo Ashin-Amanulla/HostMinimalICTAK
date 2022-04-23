@@ -1,0 +1,26 @@
+.scroll-to-top {
+  position: fixed;
+  bottom: 100px;
+  right: 25px;
+  opacity: 0;
+  transition: all 0.2s ease-in-out;
+  z-index: 1000;
+}
+.show-scrollTop {
+  opacity: 1;
+  transition: all 0.2s ease-in-out;
+}
+
+img{
+  width:50px;
+}
+
+button:hover, button:focus {
+  outline: none;
+}
+@media only screen and (max-width : 600px){
+  .scroll-to-top{
+    position: fixed;
+    right: 220px;
+  }
+}

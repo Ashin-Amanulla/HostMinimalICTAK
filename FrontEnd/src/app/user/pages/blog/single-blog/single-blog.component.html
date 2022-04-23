@@ -1,0 +1,156 @@
+<!-- <div class='clearfix'></div> -->
+<!-- Content Wrapper -->
+<div class='row' id='content-wrapper'>
+    <div class='container'>
+        <!-- Main Wrapper -->
+        <div id='main-wrapper'>
+            <div class='clearfix'></div>
+            <div class='main section' id='main' name='Main Posts'>
+                <div class='widget Blog' data-version='2' id='Blog1'>
+                    <div class='blog-posts hfeed container item-post-wrap'>
+                        <div class='blog-post hentry item-post'>
+                            <div class='post-item-inner p-3' style="border-radius: 15px;">
+                                <!-- <nav id='breadcrumb'><a href='https://flexblog-templatesyard.blogspot.com/?m=1'>Home</a><em class='delimiter'></em><a class='b-label' href='https://flexblog-templatesyard.blogspot.com/search/label/Fashion?m=1'>Fashion</a><em class='delimiter'></em>
+                                    <span class='current'>Girl with camera style vintage</span>
+                                </nav> -->
+
+                                <h1 class='post-title'>
+                                    {{singleBlog.title}}
+                                </h1>
+                                <div class='post-meta'>
+                                    <span class='post-author'><a href='' target='_blank'
+                                            title='Sora Blogging Tips'>{{singleBlog.author}}</a></span>
+                                    <span class='post-date published'
+                                        datetime='2016-03-17T00:46:00-07:00'>{{singleBlog.date}}</span>
+                                </div>
+                                <div class='post-body post-content'>
+                                    <img alt="Girl with camera style vintage" border="0" src={{singleBlog.image}}
+                                        title="Girl with camera style vintage" /><br />
+                                    <div><br /></div>
+                                    <div>
+                                        {{singleBlog.content}}
+                                    </div>
+                                </div>
+                                <div class='post-labels'>
+                                    <div class='label-head Label'>
+                                        <a class='label-link' rel='tag'>{{singleBlog.tags}}</a>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Sidebar Wrapper -->
+        <div id='sidebar-wrapper'>
+
+            <div class='sidebar section' id='social-widget' name='Social Widget'>
+                <div class='widget Label' data-version='2' id='Label4'>
+                    <div class='widget HTML' data-version='2' id='HTML6'>
+                        <div class='widget-content'>
+                            <iframe
+                                src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fictkerala&tabs=timeline&width=300&height=130&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=false&appId"
+                                width="300" height="130" style="border:none;overflow:hidden" scrolling="no"
+                                frameborder="0" allowfullscreen="true"
+                                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                        </div>
+                    </div>
+
+
+                    <!-- <div class='widget-title'>
+                        <h3 class='title'>
+                            Tags
+                        </h3>
+                    </div>
+                    <div class='widget-content cloud-label'>
+                        <ul>
+                            <li>
+                                <a class='label-name'>
+    Beauty
+    </a>
+                            </li>
+                            <li>
+                                <a class='label-name'>
+    Business
+    </a>
+                            </li>
+                            <li>
+                                <a class='label-name'>
+    Fashion
+    </a>
+                            </li>
+                            <li>
+                                <a class='label-name' >
+    Learn
+    </a>
+                            </li>
+                            <li>
+                                <a class='label-name'>
+    Music
+    </a>
+                            </li>
+                            <li>
+                                <a class='label-name'>
+    Nature
+    </a>
+                            </li>
+                            <li>
+                                <a class='label-name'>
+    People
+    </a>
+                            </li>
+                            <li>
+                                <a class='label-name'>
+    Photography
+    </a>
+                            </li>
+                            <li>
+                                <a class='label-name'>
+    Sports
+    </a>
+                            </li>
+                            <li>
+                                <a class='label-name'>
+    Technology
+    </a>
+                            </li>
+                        </ul>
+                    </div> -->
+                </div>
+
+                <div class='sidebar common-widget section' id='sidebar1' name='Sidebar Right'>
+                    <div class='widget PopularPosts' data-version='2' id='PopularPosts1'>
+                        <div class='widget-title'>
+                            <h3 class='title'>
+                                Popular Posts
+                            </h3>
+                        </div>
+                        <div class='widget-content'>
+                            <div class='post' *ngFor="let blogData of blogDatas">
+                                <a style="cursor: pointer;" (click)="GetSingleBlog(blogData)">
+                                    <div class='post-content'>
+                                        <a class='post-image-link'>
+                                            <img alt='Backpacking the Southern Cascades' class='post-thumb'
+                                                src={{blogData.image}} />
+                                        </a>
+                                        <div class='post-info'>
+                                            <h2 class='post-title'>
+                                                <a>{{blogData.title}}</a>
+                                            </h2>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>

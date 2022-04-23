@@ -1,0 +1,38 @@
+.imgR > img {
+  border-radius: 50%;
+  width: 70%;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+    rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+}
+
+.imgW>img{
+  width: 500px;
+}
+
+.companyfont h3 {
+  font-family: "arvo", sans-serif;
+  font-size: 60px;
+}
+
+h4 {
+  font-family: "Asap", sans-serif;
+  font-size: 30px;
+}
+
+.bgClr {
+  background-color: rgb(206, 202, 202);
+}
+
+
+
+@media only screen and (max-width: 460px) {
+  .responsiveFont {
+    font-size: 40px !important;
+  }
+
+  .buttons {
+    display: grid;
+    grid-row: auto;
+    row-gap: 10px;
+  }
+}

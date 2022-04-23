@@ -1,0 +1,384 @@
+<div class="flex flex-wrap  pb-32 mt-10 container-4">
+
+    <div class="w-full md:w-8/12 px-4   mt-10  ">
+        <span class="badge badge-danger ">Starts on {{course?.[0].start_date}}</span>
+
+        <h1 class="head1 pt-2 pb-2">{{course?.[0].title}}</h1>
+        <div class="notification pb-4 ">
+            <!-- <span class="badge badge-primary ">{{course.category}}</span> -->
+            <span class="start-count  ">{{averageReview}} </span>
+            <i class="fa fa-star" aria-hidden="true " *ngFor="let star of [].constructor(avgRound);"></i>
+
+        </div>
+        <div class="imgR">
+            <video poster="{{course?.[0].image}}" controls>
+                <source src="{{course?.[0].video}}" type="video/mp4">
+                <source src="{{course?.[0].video}}" type="video/ogg">
+            </video>
+
+        </div>
+
+        <div class="pt-3 pb-4  rounded-3 details ">
+            <h1>Overview</h1>
+            <p [innerHTML]="course?.[0].details"></p>
+        </div>
+
+    </div>
+
+    <div class="w-full md:w-4/12 px-4 md:px-4 ml-auto  mt-10 layout items-center border rounded-3">
+
+        <div class="fee-button mt-10 flex justify-center">
+            <h1 class="fee1 "> {{course?.[0].fees}}</h1>
+            <div class="pt-1 pb-3 flex justify-center">
+                <app-button-join [label]="Join" data-bs-toggle="modal" (click)="outsideLink()"
+                    *ngIf="course?.[0].status =='open'"></app-button-join>
+                <app-coming-soon *ngIf="course?.[0].status !='open'"></app-coming-soon>
+
+            </div>
+        </div>
+        <hr class="mt-10">
+
+        <div class="container pt-16 course-provides">
+            <h1 class="pb-4">This course includes </h1>
+            <div class="includes">
+                <div class="row1">
+                    <i class="fas fa-calendar   "></i>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <h2 class="">{{course?.[0].duration_months}} Months of classes</h2>
+                </div>
+
+                <div class="row1">
+                    <i class="fa fa-clock   "></i>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <h2 class="">{{course?.[0].duration_internship}} hours of internship</h2>
+                </div>
+
+                <div class="row1">
+                    <i class="fab fa-leanpub "></i>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <h2 class="">{{course?.[0].mode}} classes</h2>
+                </div>
+
+                <div class="row1">
+                    <i class="fas fa-clock "></i>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <h2 class="">One year post class access </h2>
+                </div>
+
+                <div class="row1">
+                    <i class="fas fa-certificate "></i>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <h2 class="">Certificate on completion </h2>
+                </div>
+
+                <div class="row1">
+                    <i class="fas fa-mobile "></i>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <h2 class="">Mobile and Laptop Access </h2>
+                </div>
+            </div>
+        </div>
+        <hr class="mt-16">
+        <div class="container pt-16">
+            <h1 class="dwnld "> Resources</h1>
+            <div class="row pb-6">
+                <div class="col-6 " style="cursor: pointer;position: relative;left: 30px;" data-toggle="modal"
+                    data-target="#CourseSignup">
+
+                    <div class="certi">
+                        <img src="https://res.cloudinary.com/dj6eghdzu/image/upload/v1648407648/ictAssets/previewFinal_ut88la.png"
+                            class="border-1 rounded-3  w-75" style="filter: blur(0.5px);border-color: #178ad6;" alt="">
+                    </div>
+                </div>
+                <div class="col-6" style="cursor: pointer;" data-toggle="modal" data-target="#exampleModal">
+
+                    <div class="certi">
+                        <img src="https://res.cloudinary.com/dj6eghdzu/image/upload/v1647881866/ictAssets/ictsample_Certificate_page-0001_lr1euf.png"
+                            class="border-1 rounded-3 w-75" style="border-color: #178ad6;" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="pt-12 pb-3 flex justify-center">
+            <app-button-join [label]="Join" data-bs-toggle="modal" (click)="outsideLink()"
+                *ngIf="course?.[0].status =='open'"></app-button-join>
+            <app-coming-soon *ngIf="course?.[0].status !='open'"></app-coming-soon>
+        </div>
+    </div>
+</div>
+
+
+
+
+<!-- modal ends -->
+
+
+<!-- course stats bar -->
+<div class="container-4 ">
+
+    <div class="row justify-content-center  ">
+        <div class="col-12 border mb-3 "
+            style="background-color: #e7e9ec;border-radius: 20px;padding:2%;border-color: rgb(73, 73, 73);text-align: center;">
+            <div class="row flex flex-wrap">
+                <div class="col-lg-3 col-sm-12 icn56">
+                    <div class="shwbx">
+                        <i class="fas fa-handshake "></i>
+                        <h2 class="fw-bolder pt-2 pb-3">Powered By</h2>
+                    </div>
+                    <div class="col">
+                        <img src="{{course?.[0].sponser}}" width="50%" alt="" class="mr-4">
+                    </div>
+
+                </div>
+                <div class="col-lg-3 col-sm-12 icn56">
+                    <div class="shwbx">
+                        <i class="fas fa-certificate "></i>
+                        <h2 class="fw-bolder pt-2 pb-3">Certification</h2>
+                    </div>
+                    <div class="col">
+                        <img src="{{course?.[0].course_delivery}}" width="50%" alt="" class="mr-4">
+                    </div>
+
+                </div>
+            
+                <div class="col-lg-3 col-sm-12 icn56">
+                    <div class="shwbx">
+                        <i class="fas fa-school "></i>
+                        <h2 class="fw-bolder pt-2 pb-3">Knowledge Partner </h2>
+                    </div>
+                    <div class="col">
+                        <img src="{{course?.[0].learning_support}}" width="50%" alt="">
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-12 icn56">
+                    <div class="shwbx">
+                        <i class="fas fa-laptop"></i>
+                        <h2 class="fw-bolder pt-2 pb-3">Internship Partner</h2>
+                    </div>
+                    <div class="col">
+                        <img src="{{course?.[0].internship_support}}" width="50%" alt="" class="mr-4">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- course keypoints section -->
+<div class="container pt-24 ">
+    <div class="row flex flex-wrap justify-center ">
+        <div class="col-lg-10 col-sm-12 ">
+
+            <!-- course tab  -->
+
+            <section class="course-single2 pb40 ">
+                <div class="container ">
+                    <div class="row">
+                        <div class="col">
+                            <div class="accordion-menu ">
+                                <ul>
+                                    <li>
+                                        <input type="checkbox" check>
+                                        <i class="arrow"></i>
+                                        <h2><i class="fas fa-bullseye icn"></i>Objectives</h2>
+                                        <p [innerHTML]="course?.[0].objectives"></p>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" checked>
+                                        <i class="arrow"></i>
+                                        <h2><i class="fas fa-marker icn"></i>Highlights</h2>
+                                        <p [innerHTML]="course?.[0].highlights"></p>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" checked>
+                                        <i class="arrow"></i>
+                                        <h2><i class="fas fa-brain icn"></i>General Aptitude Test</h2>
+                                        <p [innerHTML]="course?.[0].test"></p>
+
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" checked>
+                                        <i class="arrow"></i>
+                                        <h2><i class="fas fa-check icn"></i>Eligibility</h2>
+                                        <p [innerHTML]="course?.[0].eligibility"></p>
+
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" checked>
+                                        <i class="arrow"></i>
+                                        <h2><i class="fas fa-calendar icn"></i>Course Agenda</h2>
+                                        <p [innerHTML]="course?.[0].agenda"></p>
+
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" checked>
+                                        <i class="arrow"></i>
+                                        <h2><i class="fas fa-money-bill icn"></i>Course Fee</h2>
+                                        <p [innerHTML]="course?.[0].fee_detail"></p>
+
+                                    </li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+
+    </div>
+</div>
+
+
+<!-- reviews -->
+<div class="container">
+    <div class="row pb-5 ">
+        <div class="col-12 ">
+            <h2 class="text-center fs-1 p-5 fw-bolder ">Reviews</h2>
+            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                <!-- Carousel indicators -->
+                <ol class="carousel-indicators">
+                    <li data-target="#myCarousel" *ngFor="let review of reviews; let i = index"
+                        class="{{ (i == 0) ? 'active' : '' }}" attr.data-slide-to="{{i}}"></li>
+                    <!-- <li data-target="#myCarousel" data-slide-to="1"></li>
+                    <li data-target="#myCarousel" data-slide-to="2"></li> -->
+                </ol>
+                <!-- Wrapper for carousel items -->
+                <div class="carousel-inner">
+                    <div class="carousel-item " ngClass="{{ (i == 0) ? 'active' : '' }}"
+                        *ngFor="let review of reviews; let i = index">
+                        <div class="{{review.photo}}" alt=""></div>
+                        <p class="testimonial"> {{review.testimonial}} </p>
+                        <p class="overview"><b> {{review.name}}</b>{{review.designation}} at <a>{{review.company}}.</a>
+                        </p>
+                        <div class="star-rating">
+                            <ul class="list-inline">
+                                <li class="list-inline-item" *ngFor="let star of [].constructor(review.rating);"><i
+                                        class="fa fa-star"></i></li>
+
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- Carousel controls -->
+                <div class="controller">
+                    <a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a class="carousel-control-next" href="#myCarousel" data-slide="next">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<!-- Modal -->
+<!-- <div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog modal">
+        <div class="modal-content">
+            <div class="modal-body p-0 rounded-3">
+                <div class=" brochure">
+                    <div class="screen">
+                        <div class="screen-body">
+                            <div class="screen-body-item left">
+                                <div class="app-title">
+                                    <span>CONTACT</span>
+                                    <span>US</span>
+                                </div>
+                                <div class="app-contact">Brochure will be sent to your email!</div>
+                            </div>
+                            <div class="screen-body-item">
+                                <form [formGroup]="BrochureReg" (ngSubmit)="brochureReg()">
+                                    <div class="app-form">
+                                        <div class="app-form-group">
+                                            <input class="app-form-control" placeholder="NAME" formControlName="name">
+                                        </div>
+                                        <div class="app-form-group">
+                                            <input class="app-form-control" placeholder="EMAIL" formControlName="email">
+                                        </div>
+                                        <div class="app-form-group">
+                                            <input class="app-form-control" placeholder="CONTACT NO"
+                                                formControlName="phoneno">
+                                        </div>
+                                        <div class="app-form-group message">
+                                            <input class="app-form-control" placeholder="HIGHEST QUALIFICATION"
+                                                formControlName="qualification">
+                                        </div>
+                                        <div class="app-form-group buttons">
+                                            <button class="app-form-button">SEND</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div> -->
+<!--?Course Certicate Download modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+
+            <!-- Modal body with image -->
+            <div class="modal-body">
+
+
+                <img src="{{course?.[0].course_certificate}}" />
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- modal end -->
+
+<!-- ?modal for Brochure -->
+
+<div class="modal fade" id="CourseSignup" tabindex="-1" aria-labelledby="CourseSignup" aria-hidden="true">
+    <div class="modal-dialog modal-danger modal-dialog-centered " role="document">
+        <div class="modal-content">
+            <div class="modal-body p-0">
+                <div class="wrapper">
+                    <div class="container">
+                        <form role="form text-start" [formGroup]="BrochureReg" (ngSubmit)='brochureReg()'>
+                            <h1>
+                                <i class="fas fa-info-circle"></i>
+                                 Details
+                            </h1>
+                            <div class="street">
+                                <label for="name">Name</label>
+                                <input type="text" formControlName="name" >
+                                
+                            </div>
+                            <div class="street">
+                                <label for="name">Email</label>
+                                <input type="email" formControlName="email" >
+                            </div>
+                            <div class="street">
+                                <label for="name">Phone Number</label>
+                                <input type="text" formControlName="phoneno" >
+                            </div>
+
+                            <div class="street">
+                                <label for="name">Highest Qualification</label>
+                                <input type="text" formControlName="qualification">
+                            </div>
+                            <br>
+                            <div class="btns">
+                                <button type="submit" [disabled]="BrochureReg.invalid">Send</button>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

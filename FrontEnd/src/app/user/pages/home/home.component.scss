@@ -1,0 +1,116 @@
+
+.borderR{
+  border-radius: 1px;
+  box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px !important;
+
+}
+
+.imgR>img{
+  width: 90%;
+}
+
+.bannerh2{
+  font-size: 62px;
+  font-weight: 500;
+  color: #212121;
+}
+@media only screen and (max-width: 400px) {
+  .bannerh2 {
+     font-size: 50px;
+     font-weight: 500;
+  color: #212121;
+  text-align: center;
+  }
+
+}
+
+//newsletter
+
+input {
+  padding: .8rem 1rem;
+  width: 40%;
+  border-radius: 5px;
+  outline: none;
+  border: solid #d1d1d1;
+  font-size: .7rem;
+
+  @media (max-width: 480px) {
+    width: 90%;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}
+
+::placeholder {
+  color: #d1d1d1;
+}
+
+.subscribe-btn {
+  padding: 1rem 1rem;
+  margin-left: 10px;
+  border-radius: 5px;
+  background: #faa094ff;
+  color: #fff;
+  font-size: .7rem;
+  border: none;
+  width: 40%;
+  outline: none;
+  cursor: pointer;
+
+  @media (max-width: 480px) {
+    width: 90%;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+  }
+}
+
+.fas.fa-envelope {
+  font-size: 2rem;
+  background: #faa094ff;
+  padding: 1rem;
+  border-radius: 100%;
+  margin: 0 0 1rem 0;
+}
+
+.env{
+  color: #d1d1d1;
+}
+
+
+
+
+.h3font{
+  text-shadow: 0px 0px 6px rgba(255,255,255,0.7);
+
+}
+
+
+.borderR2{
+  border-radius: 5px;
+
+}
+
+.nLetterbg{
+  background-color: #21243d;
+  margin-left: 15%;
+  margin-right: 15%;
+  @media (max-width: 480px) {
+    margin-left: 0;
+    margin-right: 0;
+   }
+  // border-radius: 50px;
+}
+
+
+.p1{
+  @media (max-width: 480px) {
+   font-size: smaller;
+   padding-left: 10px;
+   padding-right: 10px;;
+  }
+}
+
+.overlayDesign{
+  background-image: url('../../../../assets/images/GRA_Home-Header-Background.png');
+}

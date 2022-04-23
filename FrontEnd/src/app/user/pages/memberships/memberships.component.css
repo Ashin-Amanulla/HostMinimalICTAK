@@ -1,0 +1,56 @@
+.imgW>img{
+  width: 500px;
+}
+
+.companyfont h3 {
+  font-family: "arvo", sans-serif;
+  font-size: 60px;
+}
+
+h4 {
+  font-family: "Asap", sans-serif;
+  font-size: 30px;
+}
+
+.bgClr {
+  background-color: rgb(206, 202, 202);
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+}
+
+.button1 {
+  padding-right: 15px;
+}
+
+@media only screen and (max-width: 460px) {
+  .responsiveFont {
+    font-size: 40px !important;
+  }
+
+  .buttons {
+    display: grid;
+    grid-row: auto;
+    row-gap: 10px;
+  }
+}
+
+
+/* table */
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}

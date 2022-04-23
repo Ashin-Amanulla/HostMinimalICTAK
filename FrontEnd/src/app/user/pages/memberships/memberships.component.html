@@ -1,0 +1,132 @@
+<div class="flex flex-wrap-reverse items-center pb-32 container">
+
+
+    <div class="w-full md:w-5/12 px-12 md:px-4 ml-auto mr-auto mt-20 companyfont" data-aos="fade-left"
+        data-aos-duration="1500">
+        <h3 class="text-3xl mb-2 font-semibold leading-normal responsiveFont ">
+            Memberships
+        </h3>
+        <p class="text-lg font-light leading-relaxed mt-4 text-left mb-4 text-blueGray-600">
+            To provide the bright students of the Academic Institutions with opportunities to obtain a gainful career,
+            the ICT Academy of Kerala (ICTAK) is forming a Premium membership programme with selected Engineering/
+            Science/ Management institutions in Kerala. The institutions will be selected based on a set of criteria
+            (defined in section 5), through an online application form from the interested colleges. The submission will
+            be scrutinized by the ICTAK administration office and if required, will interact with the applying
+            institutions for obtaining clarifications. Selected institutions will be provided with one year membership
+            and will be supported by the ICTAK on a set of activities (section 2) that will help the students, teachers
+            and institutions at large. The selected institutions are required to undertake a set of activities (section
+            3) to fulfill the membership requirements.
+
+        </p>
+
+    </div>
+
+    <div class="w-full md:w-6/12 px-4 mr-auto ml-auto mt-20 " data-aos="fade-right" data-aos-duration="1500">
+        <div class="justify-center flex flex-wrap relative ">
+            <img src="../../../../assets/images/GRA_Header-Memberships.png">
+        </div>
+    </div>
+</div>
+
+
+<!-- <app-showbox></app-showbox> -->
+
+
+
+<!-- starteg Planning  -->
+
+
+<div class="flex flex-wrap items-center pb-32 container-2 bg-blueGray-100">
+
+    <div class="w-full md:w-6/12 px-4 mr-auto ml-auto mt-20 ">
+        <div class="justify-center flex flex-wrap relative  imgW">
+            <img src="../../../../assets/images/GRA_Thumbnail-MEM-AM.png">
+        </div>
+    </div>
+
+
+    <div class="w-full md:w-6/12 px-12 md:px-4 ml-auto mr-auto mt-20 companyfont">
+        <h4 class=" mb-2 font-semibold leading-normal ">
+            Academic Membership
+
+        </h4>
+        <p class="text-lg font-light leading-relaxed mt-4 mb-4 text-left text-blueGray-600">
+            ICT Academy of Kerala (ICTAK) is pleased to offer its Premium Memberships to selected Engineering , Science
+            & Management Institutions and Polytechnics in the state. Through the programme, ICTAK will support its
+            members institution’s Faculty members, Students and Staff with quality training resources, certifications
+            and Industry immersions on IR4.0 Technologies, thereby enabling them to reach their Academic and Career
+            potential.
+        </p>
+
+        <div class="buttons ">
+            <app-button-join data-aos="fade-right" [label]="academic" class="button1" data-toggle="modal"
+            data-target="#myModal">
+            </app-button-join>
+            <!-- <app-button-join data-aos="zoom-in" [label]="Register">
+            </app-button-join> -->
+        </div>
+    </div>
+
+</div>
+
+<!-- Corporate Membership  -->
+
+<div class="flex flex-wrap items-center pb-32 container-2">
+
+
+
+    <div class="w-full md:w-6/12 px-12 md:px-4 ml-auto mr-auto mt-20 companyfont">
+        <h4 class=" mb-2 font-semibold leading-normal ">
+            Corporate Membership
+        </h4>
+        <p class="text-lg font-light leading-relaxed mt-4 mb-4 text-blueGray-600">
+            ICT Academy of Kerala is pleased to offer ‘ICTAK Corporate Membership’ to a select set of leading
+            organizations in the country. Through this membership, ICTAK would like to unlock the value of a Corporate –
+            Academia collaboration through its wide network of corporate and academic partners.
+        </p>
+        <app-button-join data-aos="zoom-in" [label]="Register" routerLink="/corporate-form">
+        </app-button-join>
+    </div>
+
+
+    <div class="w-full md:w-6/12 px-4 mr-auto ml-auto mt-20 ">
+        <div class="justify-center flex flex-wrap relative  imgW">
+            <img src="../../../../assets/images/GRA_Thumbnail-MEM-CM.png">
+        </div>
+    </div>
+
+</div>
+
+
+<!--?Course Certicate Download modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModal"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+
+            <!-- Modal body with image -->
+            <div class="modal-body">
+
+                <table>
+                    <tr>
+                      <th>Sl No</th>
+                      <th>Membership ID</th>
+                      <th>College Name</th>
+                      <th>Website</th>
+
+                    </tr>
+                    <tr *ngFor="let am of ams">
+                      <td>{{am.slno}}</td>
+                      <td>{{am.mem_id}}</td>
+                      <td>{{am.name}}</td>
+                      <td>  {{am.website}}  </td>
+                    </tr>
+                    
+                  </table>
+
+
+            </div>
+
+        </div>
+    </div>
+</div>

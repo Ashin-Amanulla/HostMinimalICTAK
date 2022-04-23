@@ -1,0 +1,80 @@
+<div class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded"
+    [ngClass]="color === 'light' ? 'bg-white' : 'bg-red-900 text-white'">
+    <div class="rounded-t mb-0 px-4 py-3 border-0">
+        <div class="flex flex-wrap items-center">
+            <div class="relative w-full px-4 max-w-full flex-grow flex-1">
+                <h3 class="font-semibold text-lg" [ngClass]="color === 'light' ? 'text-blueGray-700' : 'text-white'">
+                    reviews
+                </h3>
+            </div>
+
+            <div class="relative w-full px-4 max-w-full flex-grow flex-1 text-right">
+                <a class="text-xs uppercase py-3 font-bold block" style="cursor: pointer;" routerLinkActive
+                    routerLink="add-review">
+                    <i class="fas fa-plus-circle mr-2 text-sm text-indigo-500 "></i>
+                    Add
+                </a>
+            </div>
+
+
+            <!-- add modal ends  -->
+
+        </div>
+    </div>
+
+    <div class="block w-full overflow-x-auto">
+        <!-- Projects table -->
+        <table class="items-center w-full bg-transparent border-collapse">
+            <thead>
+                <tr>
+                    <th class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left"
+                        [ngClass]="
+              color === 'light'
+                ? 'bg-blueGray-50 text-blueGray-500 border-blueGray-100'
+                : 'bg-red-800 text-red-300 border-red-700' ">
+                        Name
+                    </th>
+
+                    <th class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left"
+                       >
+                        Course
+                    </th>
+
+                    <th class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left"
+                        [ngClass]="
+              color === 'light'
+                ? 'bg-blueGray-50 text-blueGray-500 border-blueGray-100'
+                : 'bg-red-800 text-red-300 border-red-700'
+            "></th>
+                </tr>
+            </thead>
+            <tbody *ngFor="let review of reviews">
+                <tr>
+                    <th
+                        class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left flex items-center">
+                        <img src={{review.image}} class="h-12 w-12 bg-white rounded-full border" alt="..." />
+                        <span class="ml-3 font-bold" [ngClass]="color === 'light' ? 'text-blueGray-600' : 'text-white'">
+                            {{review.name}}
+                        </span>
+                    </th>
+
+                    <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                        
+                        {{review.course}}
+                    </td>
+
+
+                    <td
+                        class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-right">
+                        <div class="buttons">
+                            <button (click)="editReview(review)"><i class="fa fa-edit"></i></button>
+                        </div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+</div>
+
+

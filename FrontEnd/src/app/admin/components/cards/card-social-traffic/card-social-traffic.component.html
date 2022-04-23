@@ -1,0 +1,41 @@
+<div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded">
+  <div class="rounded-t mb-0 px-4 py-3 border-0">
+    <div class="flex flex-wrap items-center">
+      <div class="relative w-full px-4 max-w-full flex-grow flex-1">
+        <h3 class="font-semibold text-base text-blueGray-700">
+          Todo
+        </h3>
+      </div>
+      <div class="relative w-full px-4 max-w-full flex-grow flex-1 text-right">
+        <a [routerLink]="['/admin/addTodo']" class="text-xs uppercase py-3 font-bold block" routerLinkActive>
+          <i class="fas fa-plus-circle mr-2 text-sm text-indigo-500 "></i>
+          Add
+        </a>
+      </div>
+    </div>
+  </div>
+
+ <!-- Divider -->
+ <hr class=" md:min-w-full" />
+
+
+  <div class="block w-full overflow-x-auto">
+    <!-- Projects table -->
+    <table class="items-center w-full bg-transparent border-collapse">
+
+
+      <tbody>
+        <tr>
+          <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
+            <input type="checkbox" style="cursor:pointer">
+          </td>
+          <th class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+            Type something
+          </th>
+        
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+</div>

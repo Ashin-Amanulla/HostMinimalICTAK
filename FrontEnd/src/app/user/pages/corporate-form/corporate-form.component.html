@@ -1,0 +1,113 @@
+<div class="body1">
+    <div class="container pt-16">
+        <div id="container">
+            <h1> Contact Us</h1>
+            <div class="underline">
+            </div>
+
+            <form [formGroup]="CorporateForm" (ngSubmit)='newCorporate()'>
+                <div class="name">
+                    <label for="name"></label>
+                    <input type="text" placeholder="Name" id="name_input" formControlName="name" required>
+                </div>
+                <div class="email">
+                    <label for="email"></label>
+                    <input type="text" placeholder="Address" formControlName="address" required>
+                </div>
+                <div class="name">
+                    <label for="name"></label>
+                    <input type="text" placeholder="Website" formControlName="website" required>
+                </div>
+                <div class="email">
+                    <label for="name"></label>
+                    <input type="text" placeholder="Head of the organisation" formControlName="head" required>
+                </div>
+                <div class="name">
+                    <label for="name"></label>
+                    <input type="text" placeholder="Nature of the Organization (Product/Services"
+                        formControlName="nature" required>
+                </div>
+                <div class="email">
+                    <label for="name"></label>
+                    <select placeholder="Subject line" formControlName="typeof" required>
+                        <option value="">Type of the Company</option>
+                        <option *ngFor="let pvt of pvts" [ngValue]="pvt">{{pvt}}</option>
+                    </select>
+                </div>
+
+                <div class="name">
+                    <label for="name"></label>
+                    <input type="text" placeholder="Corporate identity Number" formControlName="identityNo" required>
+                </div>
+
+                <div class="email">
+                    <label for="name"></label>
+                    <input type="text" placeholder="GST Number" formControlName="GST" required>
+                </div>
+
+
+
+
+                <div class="name">
+                    <label for="name"></label>
+                    <input type="text" placeholder="Name of the Contact" formControlName="nameofContact" required>
+                </div>
+
+                <div class="email">
+                    <label for="name"></label>
+                    <input type="text" placeholder="Contact Number" formControlName="phone" required>
+                </div>
+
+                <div class="name">
+                    <label for="name"></label>
+                    <input type="text" placeholder="Email" formControlName="email" required>
+                </div>
+
+                <div class="email">
+                    <label for="name"></label>
+                    <input type="text" placeholder="TechnicalSkillsets commonly used in the organisation"
+                        formControlName="TechnicalSkill" required>
+                </div>
+
+                <div class="name">
+                    <label for="name"></label>
+                    <input type="text" placeholder="Employee Count" formControlName="employeeCount" required>
+                </div>
+                <div class="email">
+                    <label for="name"></label>
+                    <select formControlName="hire" required>
+                        <option value="">Average yearly fresher hiring in your company </option>
+                        <option *ngFor="let hire of hires" [ngValue]="hire">{{hire}}</option>
+                    </select>
+                </div>
+
+                <div class="name">
+                    <label for="name"></label>
+                    <select formControlName="patents" required>
+                        <option value="">Number of Patents per Year</option>
+                        <option *ngFor="let patent of patents" [ngValue]="patent">{{patent}}</option>
+                    </select>
+                </div>
+
+
+                <div class="message">
+                    <label for="message"></label>
+                    <textarea name="message" placeholder="How do you wish to collaborate" cols="30" rows="5" formControlName="collaborate"
+                        required></textarea>
+                </div>
+
+                <div class="message">
+                    <label for="message"></label>
+                    <textarea name="message" placeholder="Any academic interface program/ activities conducted by your organization? if so please provide the details" cols="30" rows="5" formControlName="details"
+                        required></textarea>
+                </div>
+
+
+
+                <!-- <div class="submit">
+                    <input type="submit" value="Submit" id="form_button"  [disabled]="CorporateForm.pristine || CorporateForm.invalid"/>
+                </div> -->
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,61 @@
+<div class="container ">
+
+    <div class="header align-items-center justify-content-center">
+        <div class="container">
+            <div class="row flex justify-center align-items-center">
+                <!-- Menu Start-->
+                <div class="menu col-lg-6 col-md-6 col-sm-12">
+                    <div class="text col-12">
+                        <div class="center_text">
+                            <span>{{staff.name}}</span>
+                        </div>
+                        <div class="bottom_text">
+                            <span>{{staff.designation}} | {{staff.grade}}</span>
+                            
+                        </div>
+                        <span>{{staff.division}}</span>
+                        <div class="my_info te  ">
+                            <a href="mailto:{{staff.mail}}"  *ngIf="staff.mail!= ''" target="_blank"> <i class="fa fa-envelope" aria-hidden="true"></i></a>
+                            <a href="{{staff.facebook}}" *ngIf="staff.facebook!= ''" target="_blank"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+                            <a href="{{staff.linkedIn}}" *ngIf="staff.linkedIn!= ''" target="_blank"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+                            <a href="{{staff.instagram}}" *ngIf="staff.instagram!= ''" target="_blank"> <i class="fab fa-instagram-square" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!--end menu-->
+
+                <div class="photo_frame col-lg-6 col-md-6 col-sm-12">
+                    <div class="photo">
+                        <img
+                            src={{staff.photo}}>
+                    </div>
+                </div>
+
+            </div>
+            <!--end row-->
+        </div>
+    </div>
+
+    <!-- profile  -->
+    <div class="course-heading">
+
+        <div class="justify-center text-center flex flex-wrap mt-24" data-aos="fade-up"
+            data-aos-anchor-placement="center-bottom">
+            <div class="w-full md:w-6/12 px-12 md:px-4">
+                <h2 class="font-semibold text-4xl">Profile</h2>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container3 pt-16 pb-16">
+        <p [innerHTML]="staff.details">
+          
+
+        </p>
+        <!-- <div class="my_info cv">
+            <a class="btn text-center">Download CV &nbsp;<i class="fas fa-arrow-down"></i></a>
+        </div> -->
+    </div>
+
+</div>

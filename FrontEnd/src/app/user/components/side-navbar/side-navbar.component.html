@@ -1,0 +1,56 @@
+<div class="d-lg-none d-xl-none">
+  <nav role="navigation">
+    <div id="menuToggle">
+
+
+      <input type="checkbox" [(ngModel)]="isChecked" />
+
+      <div>
+
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <!--
+    Too bad the menu has to be inside of the button
+    but hey, it's pure CSS magic.
+    -->
+      <div class="img1" routerLink="/">
+        <img src="../../../../assets/images/Logo-Name_ICTAK.png" alt="" />
+      </div>
+
+      <ul id="menu"  >
+        <li class="dropdown">
+          <input type="checkbox" />
+          <a data-toggle="dropdown">About</a>
+          <ul class="dropdown-menu">
+            <li><a  (click)="toggleNav()" routerLink="company">The Company </a></li>
+            <li><a (click)="toggleNav()" routerLink="team">The Team</a></li>
+            <li><a (click)="toggleNav()" routerLink="shareholders">The Shareholders</a></li>
+            <li><a (click)="toggleNav()"  routerLink="OU">The Operating Units</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <input type="checkbox" />
+          <a data-toggle="dropdown">Initiatives</a>
+          <ul class="dropdown-menu">
+            <li><a (click)="toggleNav()" routerLink="memberships">Memberships</a></li>
+            <li><a (click)="toggleNav()" routerLink="partnerships">Partnerships</a></li>
+            <li><a (click)="toggleNav()" routerLink="projects">Projects</a></li>
+            <li><a (click)="toggleNav()" routerLink="services">Services</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <input type="checkbox" />
+          <a  (click)="toggleNav()" routerLink="courses">Courses</a>
+        </li>
+
+        <div class="close-btn">
+          <a (click)="toggleNav()">❌</a>
+        </div>
+      </ul>
+    </div>
+  </nav>
+</div>

@@ -1,0 +1,51 @@
+<div class="course-heading">
+
+    <div class="justify-center text-center flex flex-wrap" data-aos="fade-up"
+        data-aos-anchor-placement="center-bottom">
+        <div class="w-full md:w-6/12 px-12 md:px-4">
+            <div
+                class="text-blueGray-500 p-3 text-center inline-flex items-center justify-center w-16 h-16 mb-6 shadow-lg rounded-full bg-white">
+                <i class="fs-6   fas fa-book" aria-hidden="true"></i>
+            </div>
+            <h2 class="font-semibold text-4xl">
+                Current Offerings
+            </h2>
+            <p class="text-lg leading-relaxed mt-4 mb-4 text-blueGray-500 sm:text-justify">
+                ICT Academy of Kerala provides the best quality education to upskill the youths across the state in
+                various sectors. Join our courses and build your future! </p>
+        </div>
+    </div>
+</div>
+
+
+<section class="block relative z-1 eventsbg  ">
+    <div class="container mx-auto">
+        <div class="justify-center flex flex-wrap">
+            <div class="w-full lg:w-12/12 px-4 pt-12">
+                <div class="flex flex-wrap ">
+
+
+                    <div class="w-full lg:w-3/12 px-4 justify-center flex flex-wrap" data-aos="fade-up"
+                        data-aos-duration="2000" *ngFor="let course of courses; let i = index" (click)="singlePage(course.code)">
+                        <a style="cursor: pointer;" *ngIf="i<8"  >
+                            <div class="glassBox">
+                                <div class="glassBox__imgBox">
+                                    <img src={{course.image}} alt="">
+                                    <p class="glassBox__title">{{course.title}}</p>
+                                </div>
+                              
+                            </div>
+                        </a>
+                    </div>
+
+       
+
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

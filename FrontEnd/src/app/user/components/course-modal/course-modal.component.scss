@@ -1,0 +1,246 @@
+.vertiMain{
+  border-top: 1px solid rgba(2, 2, 2, 0.479);
+  width: 100%;
+}
+
+.layout{
+  background-color: #537895;
+  background-image: linear-gradient(315deg, #537895 0%, #09203f 74%);
+  
+  // text-align: center;
+	overflow: hidden;
+	padding-left: 15%;
+  padding-right: 15%;
+  padding-bottom: 5%;
+	max-width: 100%;
+  display: flex;
+  font-family: 'Open-sans',sans-serif;
+
+}
+
+hr{
+  margin-top: 6%;
+}
+
+.vertical {
+  border-left: 2px solid rgba(255, 255, 255, 0.479);
+  height: 100%;
+  position:absolute;
+  left: 100%;
+}
+
+
+.content{
+  display: flex;
+  justify-content: space-between;
+}
+
+.content .list{
+  display: flex;
+  flex-direction: column;
+  min-width:350px;
+  font-size: 10px;
+  position: relative;
+}
+.content .list label{
+  height: 60px;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 10px;
+  cursor: pointer;
+  padding-left: 25px;
+  transition: all 0.05s ease;
+  text-align: left;
+  color: rgba(249, 247, 247, 0.562);
+  z-index: 12;
+}
+#PostgraduatePrograms:checked ~ .list label.home,
+#Long-termTraining:checked ~ .list label.blog,
+#MicroskillsPrograms:checked ~ .list label.help,
+#Short-termPrograms:checked ~ .list label.code,
+#AddonPrograms:checked ~ .list label.about,
+#Internships:checked ~ .list label.intern,
+#WorkforceEnablementPrograms:checked ~ .list label.work{
+  color: white;
+  font-weight: bolder;
+}
+
+
+#PostgraduatePrograms:checked ~ .text-content .home,
+#Long-termTraining:checked ~ .text-content .blog,
+#MicroskillsPrograms:checked ~ .text-content .help,
+#Short-termPrograms:checked ~ .text-content .code,
+#AddonPrograms:checked ~ .text-content .about,
+#Internships:checked ~ .text-content .intern,
+#WorkforceEnablementPrograms:checked ~ .text-content .work{
+  display: block;
+}
+#Long-termTraining:checked ~ .text-content .home,
+#MicroskillsPrograms:checked ~ .text-content .home,
+#Short-termPrograms:checked ~ .text-content .home,
+#AddonPrograms:checked ~ .text-content .home,
+#Internships:checked ~ .text-content .home,
+#WorkforceEnablementPrograms:checked ~ .text-content .home{
+  display: none;
+}
+
+
+#PostgraduatePrograms:checked ~ .list .slider{
+  top: 0;
+}
+#Long-termTraining:checked ~ .list .slider{
+  top: 60px;
+}
+#MicroskillsPrograms:checked ~ .list .slider{
+  top: 120px;
+}
+#Short-termPrograms:checked ~ .list .slider{
+  top: 180px;
+}
+#AddonPrograms:checked ~ .list .slider{
+  top: 240px;
+}
+#Short-termPrograms:checked ~ .list .slider{
+  top: 180px;
+}
+#AddonPrograms:checked ~ .list .slider{
+  top: 240px;
+}
+#Internships:checked ~ .list .slider{
+  top: 180px;
+}
+#WorkforceEnablementPrograms:checked ~ .list .slider{
+  top: 240px;
+}
+
+
+
+.content input{
+  display: none;
+}
+
+
+
+
+
+.content .list label:hover{
+  color: #4d4d4e;
+}
+.content .slider{
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 60px;
+  width: 100%;
+  border-radius: 12px;
+}
+.icon{
+  padding: 10px;
+}
+
+
+
+
+.content .text-content{
+  width: 700px;
+  height: 100%;
+  margin-left: 50px;
+}
+.content .text{
+  display: none;
+}
+.content .text .title{
+  font-size: 25px;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+.content .text p{
+  text-align: justify;
+}
+.content .text-content .home{
+  display: block;
+}
+
+
+//new card
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+.card {
+	position: relative;
+font-family: 'Open-sans',sans-serif;
+	height: 100px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  
+	background-color: rgba(19, 44, 75, 0.926);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	border-radius: 5px;
+	margin: 10px;
+	transition: 0.25s ease-in;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+.card .content2 {
+	position: relative;
+	display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-family: 'Open-sans',sans-serif;
+  color: white;
+  font-weight: 700;
+
+
+}
+
+.card .content2 h4 {
+	font-style: normal;
+	// font-weight: 600;
+	font-size: 12px;
+	color: white;
+	margin-bottom: 10px;
+	margin-top: 0;
+  text-align: center;
+}
+
+
+
+
+.card:hover {
+	transform: scale(1.05);
+  color: black;
+}
+
+.card:hover {
+	background-position: top;
+}
+
+
+a{
+  display: block;
+  color: white;
+  text-decoration: none;
+  position: relative;
+  justify-items: center;
+  transition: all 2S ease-in;
+}
+a > svg{
+  float: right;
+}
+
+.view_all{
+  position: absolute;
+  bottom: 100px;
+  right: 100px;
+}
+
+

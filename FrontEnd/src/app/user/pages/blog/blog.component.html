@@ -1,0 +1,219 @@
+<!-- Blog Header -->
+<header class="header pb-5">
+    <div class="text-box">
+        <h1 class="heading-primary">
+            <span class="heading-primary-main">ICT BLOGS</span>
+            <!-- <span class="heading-primary-sub">The secondary heading</span> -->
+        </h1>
+        <div (click)="scroll(target)">
+            <a class="btn btn-white btn-animated ">Discover our Blogs</a>
+            <div class="mouse_scroll">
+                <div class="mouse">
+                    <div class="wheel"></div>
+                </div>
+                <div>
+                    <span class="m_scroll_arrows unu"></span>
+                    <span class="m_scroll_arrows doi"></span>
+                    <span class="m_scroll_arrows trei"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<!-- Content Wrapper -->
+<div class='row' id='content-wrapper' #target>
+    <div class='container'>
+        <!-- Main Wrapper -->
+        <div id='main-wrapper'>
+            <div class='clearfix'></div>
+            <!-- Featured Wrapper -->
+
+            <div class='clearfix'></div>
+
+            <div class='main section' id='main' name='Main Posts'>
+                <div class='widget Blog' data-version='2' id='Blog1'>
+                    <div class='blog-posts hfeed container index-post-wrap'>
+                        <div class='grid-posts'>
+                            <div class='blog-post hentry index-post' *ngFor="let blogData of blogDatas">
+                                <div class='index-post-inside-wrap'>
+                                    <div class='post-image-wrap'(click)="GetSingleBlog(blogData)">
+                                        <a class='post-tag'>
+                                            {{blogData.tags}}
+                                        </a>
+                                        <a class='post-image-link'>
+                                            <img alt='Essential Tips for Portrait Photographers' class='post-thumb'
+                                                src={{blogData.image}} />
+                                        </a>
+                                    </div>
+                                    <div class='post-info' >
+                                        <h2 class='post-title' style="cursor: pointer;">
+                                            <a>{{blogData.title}}</a>
+
+                                        </h2>
+                                    </div>
+                                    <div class='index-post-footer'>
+                                        <div class='post-meta'>
+                                            <span class='post-author'><a target='_blank'
+                                                    title='Sora Blogging Tips'>{{blogData.author}}</a></span>
+                                            <span class='post-date published'
+                                                datetime='2016-08-23T15:00:00-07:00'>{{blogData.date}}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Sidebar Wrapper -->
+        <div id='sidebar-wrapper'>
+            <div class='sidebar section' id='social-widget' name='Social Widget'>
+                <div class='widget LinkList' data-version='2' id='LinkList75'>
+                    <div class='widget HTML' data-version='2' id='HTML6'>
+                        <div class='widget-content'>
+                            <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fictkerala&tabs=timeline&width=300&height=130&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="300" height="130" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                        </div>
+                    </div>
+
+                    <div class='widget Label' data-version='2' id='Label4'>
+                        <div class='widget-title'>
+                            <h3 class='title'>
+                                Tags
+                            </h3>
+                        </div>
+                        <div class='widget-content cloud-label'>
+                            <ul>
+                                <li>
+                                    <a class='label-name'
+                                        >
+                                        Beauty
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class='label-name'
+                                        >
+                                        Business
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class='label-name'
+                                       >
+                                        Fashion
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class='label-name'
+                                      >
+                                        Learn
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class='label-name'
+                                       >
+                                        Music
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class='label-name'
+                                       >
+                                        Nature
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class='label-name'
+                                        >
+                                        People
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class='label-name'
+                                       >
+                                        Photography
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class='label-name'
+                                       >
+                                        Sports
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class='label-name'
+                                       >
+                                        Technology
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class='sidebar common-widget section' id='sidebar1' name='Sidebar Right'>
+                <div class='widget PopularPosts' data-version='2' id='PopularPosts1'>
+                    <div class='widget-title'>
+                        <h3 class='title'>
+                            Popular Posts
+                        </h3>
+                    </div>
+                    <div class='widget-content'>
+                        <div class='post'>
+                            <div class='post-content'>
+                                <a class='post-image-link'
+                                   >
+                                    <img alt='24 Hour Challenge: San Francisco' class='post-thumb'
+                                        src='https://2.bp.blogspot.com/-upU6GUtOQUs/VmPgE85QoYI/AAAAAAAACQw/zOrWY6Nmq9k/w680/85.jpg' />
+                                </a>
+                                <div class='post-info'>
+                                    <h2 class='post-title'>
+                                        <a
+                                           >24
+                                            Hour Challenge: San Francisco</a>
+                                    </h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class='post'>
+                            <div class='post-content'>
+                                <a class='post-image-link'
+                                   >
+                                    <img alt='Backpacking the Southern Cascades' class='post-thumb'
+                                        src='https://1.bp.blogspot.com/-wHVf1CDEwEg/W1q42OF8OcI/AAAAAAAACpE/K9U1nKqRcUsU_2BnbbZWiEI4ay9aoGi8gCK4BGAYYCw/w680/glo3.jpg' />
+                                </a>
+                                <div class='post-info'>
+                                    <h2 class='post-title'>
+                                        <a
+                                           >Backpacking
+                                            the Southern Cascades</a>
+                                    </h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class='post'>
+                            <div class='post-content'>
+                                <a class='post-image-link'
+                                  >
+                                    <img alt='Essential Tips for Portrait Photographers' class='post-thumb'
+                                        src='https://2.bp.blogspot.com/-EQKZwnKUe3U/W1q4UUxEVQI/AAAAAAAACow/u2PwukB77609F-2swRR9Rtg-E7yOgTPWgCK4BGAYYCw/w680/glo2.jpg' />
+                                </a>
+                                <div class='post-info'>
+                                    <h2 class='post-title'>
+                                        <a
+                                          >Essential
+                                            Tips for Portrait Photographers</a>
+                                    </h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+         
+
+
+            </div>
+        </div>
+    </div>
+</div>
+<div class='clearfix'></div>

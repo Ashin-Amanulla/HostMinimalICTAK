@@ -1,0 +1,38 @@
+@import url("https://fonts.googleapis.com/css2?family=Tourney:wght@500;600;700&family=Zen+Tokyo+Zoo&display=swap");
+
+.bg-cover {
+  background-image: url(../../../../assets/images/background-1939128_960_720.webp);
+}
+
+.techh1 h1 {
+  font-family: "Tourney", cursive;
+  font-size: 60px;
+  color: rgb(252, 247, 247);
+  font-weight: 700;
+  text-shadow: 2px 4px 3px rgba(243, 175, 175, 0.3);
+}
+
+.techh1 p {
+    font-family: "Tourney", cursive;
+    font-size: 20px;
+    color: rgb(252, 247, 247);
+    font-weight: 700;
+    text-shadow: 2px 4px 3px rgba(243, 175, 175, 0.3);
+  }
+
+  .bg-event{
+      background-color: rgb(126, 15, 15);
+  }
+
+
+  .keyEvent{
+      border-width: 5px;
+      border-style:double;
+      font-family: "Tourney", cursive;
+      font-size: 20px;
+      color: rgb(252, 247, 247);
+      font-weight: 700;
+      text-shadow: 2px 4px 3px rgba(243, 175, 175, 0.3);
+  
+
+  }

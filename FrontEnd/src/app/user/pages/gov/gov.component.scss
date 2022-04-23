@@ -1,0 +1,72 @@
+.imgR > img {
+  border-radius: 50%;
+  width: 70%;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+    rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+}
+
+.companyfont h3 {
+  font-family: "arvo", sans-serif;
+  font-size: 60px;
+}
+
+h4 {
+  font-family: "Asap", sans-serif;
+  font-size: 30px;
+}
+
+.bgClr {
+  background-color: rgb(206, 202, 202);
+}
+
+// news list
+
+.l-news {
+  width: 100%;
+  &__content {
+    align-items: center;
+    border-bottom: 1px solid gray;
+    display: flex;
+    padding: 30px 0;
+    &:first-child {
+      border-top: 1px solid gray;
+    }
+    &__day {
+      margin-right: 25px;
+    }
+    &__label {
+      height: 25px;
+      line-height: 25px;
+      margin-right: 25px;
+      text-align: center;
+      width: 90px;
+    }
+  }
+}
+
+
+.p-news__content {
+  letter-spacing: 0.1em;
+  transition: all 0.3s;
+  &:hover {
+    opacity: 0.5;
+    cursor: pointer;
+  }
+  &__day {
+    color: gray;
+    font-size: 10px;
+  }
+  &__label {
+    background-color: gray;
+    color: white;
+    font-size: 10px;
+  }
+  &__text {
+    font-size: 14px;
+  }
+}
+
+.itag{
+  margin-left: 50px;
+  float: right ;
+}

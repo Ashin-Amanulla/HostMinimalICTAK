@@ -1,0 +1,62 @@
+
+
+.logo {
+  width: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  vertical-align: middle;
+}
+
+
+//sticky
+.sticky {
+  position: fixed;
+  top: 0;
+}
+
+
+
+
+// Browse Course Modal 
+
+.modal-xl{
+  max-width: 70%;
+  max-height: 100%;
+}
+
+.modal-dialog {
+  min-height: calc(100vh - 60px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: auto;
+  @media(max-width: 768px) {
+    min-height: calc(100vh - 20px);
+  }
+
+}
+
+.modal-content  {
+  -webkit-border-radius: 0px !important;
+  -moz-border-radius: 0px !important;
+  border-radius: 10px !important; 
+  background-color: rgb(245, 245, 245)
+}
+
+@media only screen and (max-width: 600px) {
+  .logo {
+    width: 60%;
+    margin-left: -10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    vertical-align: middle;
+  }
+  
+}
+
+.side-nav{
+  z-index: 1000;
+}
+

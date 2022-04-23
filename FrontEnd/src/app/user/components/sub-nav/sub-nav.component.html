@@ -1,0 +1,83 @@
+<nav class="relative flex flex-wrap items-center justify-between  navbar-expand-lg bg-clr hidden md:block">
+    <div class="container  mx-auto flex flex-wrap items-center justify-between">
+        <div class="w-full relative flex justify-between lg:w-auto  px-3 lg:static lg:block lg:justify-start">
+            <ul class="flex flex-col lg:flex-row list-none ml-auto">
+
+                <!-- facebook  -->
+                <li class="nav-item">
+                    <a class="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug txtclr hover:opacity-75"
+                        href="https://www.facebook.com/ictkerala/" target="_blank">
+                        <i class="fab fa-facebook-square text-lg leading-lg  opacity-75"></i>
+                    </a>
+                </li>
+
+                <!-- youtube  -->
+                <li class="nav-item">
+                    <a class="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug txtclr hover:opacity-75"
+                        href="https://www.youtube.com/user/ictkerala" target="_blank">
+                        <i class="fab fa-youtube text-lg leading-lg  opacity-75"></i>
+                    </a>
+                </li>
+
+
+
+                <!-- instagram  -->
+                <li class="nav-item">
+                    <a class="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug txtclr hover:opacity-75"
+                        href="https://www.instagram.com/ictkerala/?hl=en" target="_blank">
+                        <i class="fab fa-instagram text-lg leading-lg  opacity-75"></i>
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+
+
+        <div class="lg:flex flex-grow items-center">
+            <ul class="flex flex-col lg:flex-row list-none ml-auto">
+                <li class="nav-item">
+                    <a class="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug txtclr hover:opacity-75"
+                        href="https://retail.ictkerala.org/" target="_blank">
+                        <span class="txtclr opacity-75">Paatshala</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug txtclr hover:opacity-75"
+                        routerLink="faq">
+                        <span class="txtclr opacity-75">FAQ</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug txtclr hover:opacity-75"
+                        routerLink="site">
+                        <span class="txtclr opacity-75">Channels</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug txtclr hover:opacity-75"
+                        routerLink="archives">
+                        <span class="txtclr opacity-75">Archives</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug txtclr hover:opacity-75"
+                        (click)="scrollToBottom()" style="cursor: pointer;">
+                        <span class="txtclr opacity-75">Contact</span>
+                    </a>
+                </li>
+                <li class="nav-item ">
+                    <a class="px-3 py-2 flex text-right text-xs uppercase font-bold leading-snug txtclr hover:opacity-75"
+                        routerLink="career">
+                        <span class="txtclr opacity-75">Career</span>
+                    </a>
+                </li>
+                <!-- <li class="nav-item ">
+                    <a class="px-3 py-2 flex text-right text-xs uppercase font-bold leading-snug txtclr hover:opacity-75"
+                    [routerLink]="['/admin']"  >
+                        <span class="txtclr opacity-75">Admin</span>
+                    </a>
+                </li> -->
+            </ul>
+        </div>
+    </div>
+</nav>
