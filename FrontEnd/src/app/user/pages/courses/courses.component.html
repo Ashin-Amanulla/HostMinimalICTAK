@@ -1,7 +1,7 @@
 <div class="flex flex-wrap  pb-32 mt-10 container-4">
 
     <div class="w-full md:w-8/12 px-4   mt-10  ">
-        <span class="badge badge-danger ">Starts on {{course?.[0].start_date}}</span>
+        <span *ngIf="course?.[0].start_date != '' " class="badge badge-danger ">Starts on {{course?.[0].start_date}}</span>
 
         <h1 class="head1 pt-2 pb-2">{{course?.[0].title}}</h1>
         <div class="notification pb-4 ">
@@ -32,7 +32,11 @@
             <div class="pt-1 pb-3 flex justify-center">
                 <app-button-join [label]="Join" data-bs-toggle="modal" (click)="outsideLink()"
                     *ngIf="course?.[0].status =='open'"></app-button-join>
-                <app-coming-soon *ngIf="course?.[0].status !='open'"></app-coming-soon>
+                <app-coming-soon *ngIf="course?.[0].status =='Closed'" [label]="closed"></app-coming-soon>
+                <app-coming-soon *ngIf="course?.[0].status =='On going'" [label]="onGoing"></app-coming-soon>
+                <app-coming-soon *ngIf="course?.[0].status =='Coming Soon'" [label]="coming"></app-coming-soon>
+
+
 
             </div>
         </div>
@@ -43,7 +47,7 @@
             <div class="includes">
                 <div class="row1">
                     <i class="fas fa-calendar   "></i>&nbsp;&nbsp;&nbsp;&nbsp;
-                    <h2 class="">{{course?.[0].duration_months}} Months of classes</h2>
+                    <h2 class="">{{course?.[0].duration_months}} months of classes</h2>
                 </div>
 
                 <div class="row1">
@@ -68,7 +72,7 @@
 
                 <div class="row1">
                     <i class="fas fa-mobile "></i>&nbsp;&nbsp;&nbsp;&nbsp;
-                    <h2 class="">Mobile and Laptop Access </h2>
+                    <h2 class="">Mobile and laptop access </h2>
                 </div>
             </div>
         </div>

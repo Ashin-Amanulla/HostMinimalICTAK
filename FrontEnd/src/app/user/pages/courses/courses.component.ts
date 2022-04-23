@@ -19,6 +19,13 @@ export class CoursesComponent implements OnInit {
     private _fb: FormBuilder
   ) { }
 
+
+  coming:string= 'Coming soon'
+  onGoing:string= 'Ongoing'
+  closed:string= 'Closed'
+
+
+
   course: any;
   code: any;
   inputDisable: boolean = true

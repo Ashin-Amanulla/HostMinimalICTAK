@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-coming-soon',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./coming-soon.component.css']
 })
 export class ComingSoonComponent implements OnInit {
+
+  @Input() label: string;
 
   constructor() { }
 

@@ -84,11 +84,9 @@ const CourseSchema = new Schema({
     },
     start_date: {
         type: String,
-        required: true
     },
     end_date: {
         type: String,
-        required: true
     },
     status: {
         type: String,
@@ -96,23 +94,18 @@ const CourseSchema = new Schema({
     },
     thumbnail: {
         type: String,
-        required: true
     },
     sponser: {
         type: String,
-        required: true
     },
     course_delivery: {
         type: String,
-        required: true
     },
     learning_support: {
         type: String,
-        required: true
     },
     internship_support: {
         type: String,
-        required: true
     },
     index: {
         type: Number
