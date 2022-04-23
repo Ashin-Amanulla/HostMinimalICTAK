@@ -86,66 +86,13 @@
                         </div>
                         <div class='widget-content cloud-label'>
                             <ul>
-                                <li>
+                                <li *ngFor="let blogData of blogDatas">
                                     <a class='label-name'
                                         >
-                                        Beauty
+                                        {{blogData.tags}}
                                     </a>
                                 </li>
-                                <li>
-                                    <a class='label-name'
-                                        >
-                                        Business
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class='label-name'
-                                       >
-                                        Fashion
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class='label-name'
-                                      >
-                                        Learn
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class='label-name'
-                                       >
-                                        Music
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class='label-name'
-                                       >
-                                        Nature
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class='label-name'
-                                        >
-                                        People
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class='label-name'
-                                       >
-                                        Photography
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class='label-name'
-                                       >
-                                        Sports
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class='label-name'
-                                       >
-                                        Technology
-                                    </a>
-                                </li>
+     
                             </ul>
                         </div>
                     </div>

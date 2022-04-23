@@ -35,7 +35,7 @@
                                     <span class="blog-item-date-month">{{blogs?.[0].date| slice:3:7}}</span>
                             </span>
                                 <h3>{{blogs?.[0].title}}</h3>
-                                <p>{{blogs?.[0].content| slice:0:50}}....</p>
+                                <p [innerHTML]="(blogs?.[0].content| slice:0:50)+'....'"></p>
                             </div>
                         </a>
 
@@ -94,8 +94,8 @@
                                     <span class="blog-item-date-day">{{blogs?.[1].date| slice:0:2}}</span>
                                     <span class="blog-item-date-month">{{blogs?.[1].date| slice:3:7}}</span>
                                 </span>
-                                <h3>{{blogs?.[0].title}}</h3>
-                                <p>{{blogs?.[0].content| slice:0:50}}....</p>
+                                <h3>{{blogs?.[1].title}}</h3>
+                                <p [innerHTML]="(blogs?.[1].content| slice:0:50)+'....'"></p>
                             </div>
                         </a>
 
@@ -113,7 +113,7 @@
                                     <span class="blog-item-date-month">{{blogs?.[2].date| slice:3:7}}</span>
                                 </span>
                                 <h3>{{blogs?.[2].title}}</h3>
-                                <p>{{blogs?.[2].content| slice:0:50}}....</p>
+                                <p [innerHTML]="(blogs?.[2].content| slice:0:50)+'....'"></p>
                             </div>
                         </a>
 
