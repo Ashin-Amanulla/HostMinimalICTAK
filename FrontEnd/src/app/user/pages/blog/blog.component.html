@@ -106,57 +106,24 @@
                         </h3>
                     </div>
                     <div class='widget-content'>
-                        <div class='post'>
-                            <div class='post-content'>
-                                <a class='post-image-link'
-                                   >
-                                    <img alt='24 Hour Challenge: San Francisco' class='post-thumb'
-                                        src='https://2.bp.blogspot.com/-upU6GUtOQUs/VmPgE85QoYI/AAAAAAAACQw/zOrWY6Nmq9k/w680/85.jpg' />
-                                </a>
-                                <div class='post-info'>
-                                    <h2 class='post-title'>
-                                        <a
-                                           >24
-                                            Hour Challenge: San Francisco</a>
-                                    </h2>
+                        <div class='post' *ngFor="let blogData of blogDatas">
+                            <a style="cursor: pointer;" (click)="GetSingleBlog(blogData)">
+                                <div class='post-content'>
+                                    <a class='post-image-link'>
+                                        <img alt='Backpacking the Southern Cascades' class='post-thumb'
+                                            src={{blogData.image}} />
+                                    </a>
+                                    <div class='post-info'>
+                                        <h2 class='post-title'>
+                                            <a>{{blogData.title}}</a>
+                                        </h2>
+                                    </div>
                                 </div>
-                            </div>
+                            </a>
                         </div>
-                        <div class='post'>
-                            <div class='post-content'>
-                                <a class='post-image-link'
-                                   >
-                                    <img alt='Backpacking the Southern Cascades' class='post-thumb'
-                                        src='https://1.bp.blogspot.com/-wHVf1CDEwEg/W1q42OF8OcI/AAAAAAAACpE/K9U1nKqRcUsU_2BnbbZWiEI4ay9aoGi8gCK4BGAYYCw/w680/glo3.jpg' />
-                                </a>
-                                <div class='post-info'>
-                                    <h2 class='post-title'>
-                                        <a
-                                           >Backpacking
-                                            the Southern Cascades</a>
-                                    </h2>
-                                </div>
-                            </div>
-                        </div>
-                        <div class='post'>
-                            <div class='post-content'>
-                                <a class='post-image-link'
-                                  >
-                                    <img alt='Essential Tips for Portrait Photographers' class='post-thumb'
-                                        src='https://2.bp.blogspot.com/-EQKZwnKUe3U/W1q4UUxEVQI/AAAAAAAACow/u2PwukB77609F-2swRR9Rtg-E7yOgTPWgCK4BGAYYCw/w680/glo2.jpg' />
-                                </a>
-                                <div class='post-info'>
-                                    <h2 class='post-title'>
-                                        <a
-                                          >Essential
-                                            Tips for Portrait Photographers</a>
-                                    </h2>
-                                </div>
-                            </div>
-                        </div>
+
                     </div>
                 </div>
-         
 
 
             </div>
