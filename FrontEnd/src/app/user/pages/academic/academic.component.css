@@ -1,8 +1,6 @@
-.imgR > img {
-    border-radius: 50%;
-    width: 70%;
-    
-  }
+.imgW>img{
+  width: 500px;
+}
   
   .companyfont h3 {
     font-family: "arvo", sans-serif;
