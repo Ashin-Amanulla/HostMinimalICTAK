@@ -27,6 +27,10 @@ export class NavBarComponent implements OnInit {
     // alert('clm')
   }
 
+  closeModal() {
+    this.modalOpen = false
+  }
+
 
   isSticky: boolean = false;
 

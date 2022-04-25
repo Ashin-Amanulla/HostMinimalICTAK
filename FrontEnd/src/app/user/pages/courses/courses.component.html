@@ -99,8 +99,10 @@
         </div>
         <div class="pt-12 pb-3 flex justify-center">
             <app-button-join [label]="Join" data-bs-toggle="modal" (click)="outsideLink()"
-                *ngIf="course?.[0].status =='open'"></app-button-join>
-            <app-coming-soon *ngIf="course?.[0].status !='open'"></app-coming-soon>
+            *ngIf="course?.[0].status =='open'"></app-button-join>
+        <app-coming-soon *ngIf="course?.[0].status =='Closed'" [label]="closed"></app-coming-soon>
+        <app-coming-soon *ngIf="course?.[0].status =='On going'" [label]="onGoing"></app-coming-soon>
+        <app-coming-soon *ngIf="course?.[0].status =='Coming Soon'" [label]="coming"></app-coming-soon>
         </div>
     </div>
 </div>
