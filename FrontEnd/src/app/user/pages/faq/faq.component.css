@@ -78,3 +78,14 @@
   display: none;
 }
 /* FAQ END */
+
+/* faq media query */
+@media (max-width:480px){
+  
+.content {
+  width: 100%;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin: 0 auto;
+}
+}

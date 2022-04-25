@@ -104,6 +104,8 @@ input {
 
 
 .p1{
+
+  /* Media Query for Mobile Devices */
   @media (max-width: 480px) {
    font-size: smaller;
    padding-left: 10px;
@@ -113,4 +115,22 @@ input {
 
 .overlayDesign{
   background-image: url('../../../../assets/images/GRA_Home-Header-Background.png');
+}
+
+    /* Media Query for Mobile Devices */
+    @media (max-width: 480px) {
+    
+      .imgR img{
+        width: 80%;
+        padding-top: 20px;
+      }
+      
+  }
+
+  /* Media Query for low resolution  Tablets, Ipads */
+  @media (min-width: 481px) and (max-width: 767px) {
+    .imgR img{
+    display: none;
+    }
+    
 }

@@ -172,3 +172,8 @@ ul {
   justify-content: center;
   align-items:flex-end;
 }
+ @media (max-width:480px){
+   .img1{
+     padding-right: 126px;
+   }
+ }

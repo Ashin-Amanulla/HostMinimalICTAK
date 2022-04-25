@@ -11,8 +11,10 @@ import Swal from 'sweetalert2';
   templateUrl: './courses.component.html',
   styleUrls: ['./courses.component.scss']
 })
-export class CoursesComponent implements OnInit {
+  
 
+export class CoursesComponent implements OnInit {
+  
   constructor(private _route: ActivatedRoute,
     private _heroService: HeroUserService,
     private _router: Router,
@@ -23,7 +25,6 @@ export class CoursesComponent implements OnInit {
   coming:string= 'Coming soon'
   onGoing:string= 'Ongoing'
   closed:string= 'Closed'
-
 
 
   course: any;
@@ -46,6 +47,7 @@ export class CoursesComponent implements OnInit {
     'phoneno': new FormControl(''),
     'qualification': new FormControl(''),
   })
+
 
 
 
