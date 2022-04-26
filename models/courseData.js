@@ -95,18 +95,7 @@ const CourseSchema = new Schema({
     thumbnail: {
         type: String,
     },
-    sponser: {
-        type: String,
-    },
-    course_delivery: {
-        type: String,
-    },
-    learning_support: {
-        type: String,
-    },
-    internship_support: {
-        type: String,
-    },
+    showboxArray: [{ sbImages: String }],
     index: {
         type: Number
     }

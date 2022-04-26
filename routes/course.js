@@ -53,10 +53,8 @@ router.post("/addCourse", async (req, res, next) => {
           end_date: req.body.end_date,
           status: req.body.status,
           thumbnail: req.body.thumbnail,
-          sponser: req.body.sponser,
-          course_delivery: req.body.course_delivery,
-          learning_support: req.body.learning_support,
-          internship_support: req.body.internship_support,
+          showboxArray:req.body.showboxArray,
+
           index: indx,
         };
 
@@ -108,10 +106,7 @@ router.post("/updateCourse", async (req, res, next) => {
       end_date: req.body.course.end_date,
       status: req.body.course.status,
       thumbnail: req.body.course.thumbnail,
-      sponser: req.body.course.sponser,
-      course_delivery: req.body.course.course_delivery,
-      learning_support: req.body.course.learning_support,
-      internship_support: req.body.course.internship_support,
+      showboxArray:req.body.course.showboxArray
     };
     let id = req.body.id;
     let updateData = { $set: item };

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators, FormBuilder } from "@angular/forms";
+import { FormGroup, FormControl, Validators, FormBuilder, FormArray } from "@angular/forms";
 import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import { Router, ActivatedRoute } from '@angular/router';
 import { HeroAdminService } from '../../hero-admin.service';
@@ -13,7 +13,7 @@ import Swal from 'sweetalert2';
 export class EditCourseComponent implements OnInit {
 
   public Editor = ClassicEditor;
-  constructor(private _adminService: HeroAdminService, private _router: Router, private _fb: FormBuilder) { }
+  constructor(private _adminService: HeroAdminService, private _router: Router, private fb: FormBuilder) { }
 
 
 
@@ -43,12 +43,11 @@ export class EditCourseComponent implements OnInit {
     "end_date": new FormControl(''),
     "status": new FormControl(''),
     "thumbnail": new FormControl(''),
-    "sponser": new FormControl(''),
-    "course_delivery": new FormControl(''),
-    "learning_support": new FormControl(''),
-    "internship_support": new FormControl(''),
+    "showboxArray":this.fb.array([])
 
   });
+
+
 
   ngOnInit(): void {
 
@@ -57,7 +56,18 @@ export class EditCourseComponent implements OnInit {
     this._adminService.getCourseById(id)
       .subscribe((res) => {
 
-        this.EditCourse = this._fb.group({
+
+        
+          let shws = res.showboxArray       
+          let shwControl = <FormArray>this.EditCourse.controls.showboxArray;
+          console.log('shws',shws)
+          shws.forEach((element: any) => {
+            shwControl.push(this.fb.group({sbImages:element.sbImages}))
+          });
+        
+      
+
+        this.EditCourse = this.fb.group({
           "title": res.title,
           "code": res.code,
           "category": res.category,
@@ -82,16 +92,36 @@ export class EditCourseComponent implements OnInit {
           "end_date": res.end_date,
           "status": res.status,
           "thumbnail": res.thumbnail,
-          "sponser": res.sponser,
-          "course_delivery": res.course_delivery,
-          "learning_support": res.learning_support,
-          "internship_support": res.internship_support
-
-
+          "showboxArray": shwControl
         })
+
+
+        console.log("value",this.EditCourse.value)
+
       })
 
+  }
 
+
+  //add shbx
+
+  newInputs(): FormArray {
+    return this.EditCourse.get("showboxArray") as FormArray
+  }
+
+  newShowboxImages(): FormGroup {
+    return this.fb.group({
+      sbImages: new FormControl("")
+    })
+  }
+
+
+  addFormInput() {
+    this.newInputs().push(this.newShowboxImages());
+  }
+
+  removeInputField(i: number) {
+    this.newInputs().removeAt(i);
   }
 
 
@@ -101,7 +131,7 @@ export class EditCourseComponent implements OnInit {
     let id = localStorage.getItem('course')
 
     let courseDetails = this.EditCourse.value;
-    console.log('courseDetails',courseDetails)
+    console.log('courseDetails', courseDetails)
     this._adminService.editCourse(courseDetails, id)
       .subscribe(res => {
         console.log(res)
@@ -160,5 +190,8 @@ export class EditCourseComponent implements OnInit {
             this._router.navigate(['/admin/course'])
           })
         }
-      }) }
+      })
+  }
 }
+
+

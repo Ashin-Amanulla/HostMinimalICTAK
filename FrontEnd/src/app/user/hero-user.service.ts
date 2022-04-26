@@ -10,8 +10,8 @@ export class HeroUserService {
 
 
 
-  // server_address: string ='/api';
-  server_address: string = "http://localhost:8887/api"
+  server_address: string ='/api';
+  // server_address: string = "http://localhost:8887/api"
 
     constructor(private http: HttpClient) { }
 

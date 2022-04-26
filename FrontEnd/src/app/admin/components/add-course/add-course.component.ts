@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators } from "@angular/forms";
+import { FormGroup, FormControl, Validators, FormBuilder, FormArray } from "@angular/forms";
 import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import { Router, ActivatedRoute } from '@angular/router';
 import { HeroAdminService } from '../../hero-admin.service';
@@ -16,7 +16,9 @@ export class AddCourseComponent implements OnInit {
 
   public Editor = ClassicEditor;
 
-  constructor(private _adminService: HeroAdminService, private _router: Router) { }
+  constructor(private _adminService: HeroAdminService, private _router: Router,private fb:FormBuilder) { 
+
+  }
 
 
 
@@ -47,20 +49,35 @@ export class AddCourseComponent implements OnInit {
     "end_date": new FormControl(''),
     "status": new FormControl(''),
     "thumbnail": new FormControl(''),
-    "sponser": new FormControl(''),
-    "course_delivery": new FormControl(''),
-    "learning_support": new FormControl(''),
-    "internship_support": new FormControl(''),
+       "showboxArray":this.fb.array([])
 
   });
 
+  newInputs():FormArray{
+    return this.course.get("showboxArray") as FormArray
+  }
 
+  newShowboxImages():FormGroup{
+    return this.fb.group({
+      sbImages: new FormControl ("")
+    })
+  }
+
+
+  addFormInput(){
+    this.newInputs().push(this.newShowboxImages());
+  }
+
+  removeInputField(i:number){
+    this.newInputs().removeAt(i);
+  }
 
   //functions
   onSubmit() {
 
     let courseDetails = this.course.value;
     console.log(courseDetails)
+
     this._adminService.addCourse(courseDetails)
       .subscribe(res => {
         console.log(res)
@@ -86,4 +103,15 @@ export class AddCourseComponent implements OnInit {
         }
       })
   }
+
+
+
+
+
+
+
+
+
+
+
 }
