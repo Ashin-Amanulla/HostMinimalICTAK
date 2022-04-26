@@ -70,9 +70,9 @@
 
 
     </div>
-    <div class="box pb-16   " >
+    <div class="box pb-16" >
 
-        <div class="card" *ngFor="let staff of staffs | searchFilter: query | paginate: config ">
+        <div class="card " *ngFor="let staff of staffs | searchFilter: query | paginate: config ">
             <div class="imgBx" style="cursor: pointer;" (click)="singleEmployee(staff)">
                 <img src="{{staff.photo}}"
                     alt="images">

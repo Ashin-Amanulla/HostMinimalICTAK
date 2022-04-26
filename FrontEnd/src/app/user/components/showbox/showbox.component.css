@@ -74,3 +74,20 @@
   }
   /****/
 }
+
+@media (max-width: 480px)  {
+  
+  .showbox {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding-left: 8%;
+    padding-right: 8%;
+    justify-content: center;
+  }
+  .client-count-wrp-inner{
+     align-items: center;
+     justify-content: center;
+     align-self: center;
+  }
+  
+}

@@ -4125,3 +4125,8 @@ $comment-img-size-sm: 1.75rem;
       height: $comment-img-size-sm;
    }
 }
+@media (max-width:480px){
+   .post-item-inner h1{
+         margin-top: 20px;
+    }
+}

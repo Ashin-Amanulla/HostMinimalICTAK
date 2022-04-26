@@ -13,8 +13,10 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
   templateUrl: './courses.component.html',
   styleUrls: ['./courses.component.scss']
 })
-export class CoursesComponent implements OnInit {
+  
 
+export class CoursesComponent implements OnInit {
+  
   constructor(private _route: ActivatedRoute,
     private _heroService: HeroUserService,
     private _router: Router,
@@ -22,9 +24,12 @@ export class CoursesComponent implements OnInit {
   ) { }
 
 
-  coming: string = 'Coming soon'
-  onGoing: string = 'Ongoing'
-  closed: string = 'Closed'
+
+  coming:string= 'Coming soon'
+  onGoing:string= 'Ongoing'
+  closed:string= 'Closed'
+
+
   course: any;
   code: any;
   inputDisable: boolean = true
@@ -51,6 +56,7 @@ partners=[
 // 'https://ictkerala.org/wp-content/uploads/2021/11/DSAKKEM-scaled.jpg',
 
 ]
+
 
   ngOnInit(): void {
 

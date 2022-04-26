@@ -63,3 +63,16 @@ body {
   -50px -50px 0 -40px rgb(77, 76, 76),
   50px 50px 0 -40px rgb(77, 76, 76);
 }
+
+@media (max-width:480px) {
+  
+    container{
+      margin: 0;
+      padding: 0;
+    }
+    .companyfont h3 {
+      font-family: "arvo", sans-serif;
+      font-size: 40px;
+      text-align: center;
+    }
+}

@@ -22,6 +22,7 @@
 
 }
 
+
 .b>img,
 .b {
   width: 250px;
@@ -42,10 +43,6 @@
 	border-color: rgb(73, 73, 73);
 	text-align: center;
 }
-
-
-
-
 
 
 .rightpanel {
@@ -1183,4 +1180,36 @@ button:focus {
 		}
 	}
 
+}
+
+@media (max-width:480px){
+	.container-4{
+		justify-content: center;
+		padding: 0;
+		margin: 0;
+		margin-top: 50px;
+	}
+	.imgR {
+		width: 100%;
+		padding-top: 56.25%;
+		height: 0;
+		position: relative;
+		border-radius: 20px;
+		justify-content: center;
+		align-items: center;
+		align-self: center;
+	
+		video {
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+			border-radius: 20px;
+			align-items: center;
+		    align-self: center;
+	
+		}
+	
+	}
 }

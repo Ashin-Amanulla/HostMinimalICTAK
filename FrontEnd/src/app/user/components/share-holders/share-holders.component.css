@@ -24,3 +24,13 @@
       justify-content: space-evenly;
   }
   
+  @media(max-width:480px){
+    .container{
+        padding: 0;
+        margin: 0;
+    }
+    .companyfont h3{
+      font-family: "arvo", sans-serif;
+      font-size: 40px;
+    }
+  }
