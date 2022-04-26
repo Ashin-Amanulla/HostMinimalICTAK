@@ -15,7 +15,7 @@ mongoose
 
 
 mongoose.connection.on("connected", () => {
-  console.log("Mongoose connected to DB " + process.env.MONGO_URI);
+  console.log("Mongoose connected to DB " );
 });
 
 mongoose.connection.on("error", (err) => {

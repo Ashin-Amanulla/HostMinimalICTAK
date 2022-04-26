@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { CarouselModule } from 'ngx-owl-carousel-o';
 
 
 //router
@@ -135,6 +136,7 @@ import { CourseListComponent } from './pages/course-list/course-list.component';
         FormsModule,
         ReactiveFormsModule,
         NgSelectModule,
+        CarouselModule,
 
         NgxPaginationModule,
         ToastrModule,

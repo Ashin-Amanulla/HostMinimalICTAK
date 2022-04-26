@@ -1,7 +1,8 @@
 <div class="flex flex-wrap  pb-32 mt-10 container-4">
 
     <div class="w-full md:w-8/12 px-4   mt-10  ">
-        <span *ngIf="course?.[0].start_date != '' " class="badge badge-danger ">Starts on {{course?.[0].start_date}}</span>
+        <span *ngIf="course?.[0].start_date != '' " class="badge badge-danger ">Starts on
+            {{course?.[0].start_date}}</span>
 
         <h1 class="head1 pt-2 pb-2">{{course?.[0].title}}</h1>
         <div class="notification pb-4 ">
@@ -99,10 +100,10 @@
         </div>
         <div class="pt-12 pb-3 flex justify-center">
             <app-button-join [label]="Join" data-bs-toggle="modal" (click)="outsideLink()"
-            *ngIf="course?.[0].status =='open'"></app-button-join>
-        <app-coming-soon *ngIf="course?.[0].status =='Closed'" [label]="closed"></app-coming-soon>
-        <app-coming-soon *ngIf="course?.[0].status =='On going'" [label]="onGoing"></app-coming-soon>
-        <app-coming-soon *ngIf="course?.[0].status =='Coming Soon'" [label]="coming"></app-coming-soon>
+                *ngIf="course?.[0].status =='open'"></app-button-join>
+            <app-coming-soon *ngIf="course?.[0].status =='Closed'" [label]="closed"></app-coming-soon>
+            <app-coming-soon *ngIf="course?.[0].status =='On going'" [label]="onGoing"></app-coming-soon>
+            <app-coming-soon *ngIf="course?.[0].status =='Coming Soon'" [label]="coming"></app-coming-soon>
         </div>
     </div>
 </div>
@@ -114,56 +115,25 @@
 
 
 <!-- course stats bar -->
-<div class="container-4 ">
+<div class="container-4 " >
 
-    <div class="row justify-content-center  ">
-        <div class="col-12 border mb-3 "
-            style="background-color: #e7e9ec;border-radius: 20px;padding:2%;border-color: rgb(73, 73, 73);text-align: center;">
-            <div class="row flex flex-wrap">
-                <div class="col-lg-3 col-sm-12 icn56">
-                    <div class="shwbx">
-                        <i class="fas fa-handshake "></i>
-                        <h2 class="fw-bolder pt-2 pb-3">Powered By</h2>
-                    </div>
-                    <div class="col">
-                        <img src="{{course?.[0].sponser}}" width="50%" alt="" class="mr-4">
-                    </div>
+     <!-- <div class="row justify-content-center  " > -->
+        <div class="col-12 border mb-3 carousalDiv " style="display: inline-block;"> 
+                <owl-carousel-o [options]="customOptions">
+                    <ng-template carouselSlide *ngFor="let partner of partners">
+                        <div class="b">
+                            <img src="{{partner}}">
+                        </div>
+                    </ng-template>
+                </owl-carousel-o>
 
-                </div>
-                <div class="col-lg-3 col-sm-12 icn56">
-                    <div class="shwbx">
-                        <i class="fas fa-certificate "></i>
-                        <h2 class="fw-bolder pt-2 pb-3">Certification</h2>
-                    </div>
-                    <div class="col">
-                        <img src="{{course?.[0].course_delivery}}" width="50%" alt="" class="mr-4">
-                    </div>
-
-                </div>
-            
-                <div class="col-lg-3 col-sm-12 icn56">
-                    <div class="shwbx">
-                        <i class="fas fa-school "></i>
-                        <h2 class="fw-bolder pt-2 pb-3">Knowledge Partner </h2>
-                    </div>
-                    <div class="col">
-                        <img src="{{course?.[0].learning_support}}" width="50%" alt="">
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-12 icn56">
-                    <div class="shwbx">
-                        <i class="fas fa-laptop"></i>
-                        <h2 class="fw-bolder pt-2 pb-3">Internship Partner</h2>
-                    </div>
-                    <div class="col">
-                        <img src="{{course?.[0].internship_support}}" width="50%" alt="" class="mr-4">
-                    </div>
-                </div>
-
-            </div>
         </div>
-    </div>
+    <!-- </div>  -->
 </div>
+
+
+
+
 <!-- course keypoints section -->
 <div class="container pt-24 ">
     <div class="row flex flex-wrap justify-center ">
@@ -356,20 +326,20 @@
                         <form role="form text-start" [formGroup]="BrochureReg" (ngSubmit)='brochureReg()'>
                             <h1>
                                 <i class="fas fa-info-circle"></i>
-                                 Details
+                                Details
                             </h1>
                             <div class="street">
                                 <label for="name">Name</label>
-                                <input type="text" formControlName="name" >
-                                
+                                <input type="text" formControlName="name">
+
                             </div>
                             <div class="street">
                                 <label for="name">Email</label>
-                                <input type="email" formControlName="email" >
+                                <input type="email" formControlName="email">
                             </div>
                             <div class="street">
                                 <label for="name">Phone Number</label>
-                                <input type="text" formControlName="phoneno" >
+                                <input type="text" formControlName="phoneno">
                             </div>
 
                             <div class="street">
