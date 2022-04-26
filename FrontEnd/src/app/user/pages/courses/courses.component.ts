@@ -3,6 +3,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { HeroUserService } from '../../hero-user.service';
 import { FormGroup, FormControl, Validators, FormBuilder } from "@angular/forms";
 import Swal from 'sweetalert2';
+import { OwlOptions } from 'ngx-owl-carousel-o';
+
 
 
 
@@ -22,6 +24,7 @@ export class CoursesComponent implements OnInit {
   ) { }
 
 
+
   coming:string= 'Coming soon'
   onGoing:string= 'Ongoing'
   closed:string= 'Closed'
@@ -30,16 +33,15 @@ export class CoursesComponent implements OnInit {
   course: any;
   code: any;
   inputDisable: boolean = true
-
-  Join = 'Register Now!'
-  Coming = 'Coming Soon!'
-
   reviews: any
   averageReview: any
   avgRound: any
-
   courseSelected: any
   courseFee: Number
+
+  
+  Join = 'Register Now!'
+  Coming = 'Coming Soon!'
 
   BrochureReg: any = new FormGroup({
     'name': new FormControl(''),
@@ -48,7 +50,12 @@ export class CoursesComponent implements OnInit {
     'qualification': new FormControl(''),
   })
 
+partners=[
 
+'https://ictkerala.org/wp-content/uploads/2021/11/DSAKKEM-scaled.jpg',
+// 'https://ictkerala.org/wp-content/uploads/2021/11/DSAKKEM-scaled.jpg',
+
+]
 
 
   ngOnInit(): void {
@@ -67,7 +74,7 @@ export class CoursesComponent implements OnInit {
             this._heroService.getReviews(this.course[0].title)
               .subscribe((review: any) => {
                 this.reviews = review;
-                console.log('reviews',this.reviews)
+                console.log('reviews', this.reviews)
 
 
                 var sum = 0;
@@ -78,7 +85,7 @@ export class CoursesComponent implements OnInit {
 
                 avg = sum / this.reviews.length
                 this.averageReview = avg
-                console.log("ghfht",this.averageReview)
+                console.log("ghfht", this.averageReview)
                 this.avgRound = Math.round(avg)
               });
 
@@ -111,7 +118,7 @@ export class CoursesComponent implements OnInit {
             timer: 1500
           })
             .then(() => {
-              window.open(this.course?.[0].course_brochure , "_blank");
+              window.open(this.course?.[0].course_brochure, "_blank");
             })
         }
         else {
@@ -127,5 +134,37 @@ export class CoursesComponent implements OnInit {
       })
 
   }
+
+
+
+
+  customOptions: OwlOptions = {
+    loop: true,
+    mouseDrag: false,
+    touchDrag: false,
+    pullDrag: false,
+    dots: true,
+    autoplay: false,
+    navSpeed: 700,
+    navText: ['', ''],
+    responsive: {
+      0: {
+        items: 1
+      },
+      400: {
+        items: 2
+      },
+      740: {
+        items: 3
+      },
+      940: {
+        items: 4
+      }
+    },
+
+  }
+
+
+
 
 }

@@ -22,6 +22,29 @@
 
 }
 
+
+.b>img,
+.b {
+  width: 250px;
+  height: 180px;
+  margin: 10px 10px;
+  object-fit: contain;
+  border-radius: 10px;
+
+}
+
+
+
+.carousalDiv{
+	display: inline-block;
+	background-color: #e7e9ec;
+	border-radius: 20px;
+	padding:2%;
+	border-color: rgb(73, 73, 73);
+	text-align: center;
+}
+
+
 .rightpanel {
 	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 	border-radius: 5px;
