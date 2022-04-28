@@ -218,7 +218,9 @@
                 <div class="carousel-inner">
                     <div class="carousel-item " ngClass="{{ (i == 0) ? 'active' : '' }}"
                         *ngFor="let review of reviews; let i = index">
-                        <div class="{{review.photo}}" alt=""></div>
+                        <div class="img-box" alt="">
+                            <img src="{{review.photo}}" alt="">
+                        </div>
                         <p class="testimonial"> {{review.testimonial}} </p>
                         <p class="overview"><b> {{review.name}}</b>{{review.designation}} at <a>{{review.company}}.</a>
                         </p>
